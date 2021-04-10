@@ -1,5 +1,3 @@
-# ceng.kutahyauniversity
-
 # Bilgi Paylaştıkça Çogalır
 
 ## Ekleme İçin 
