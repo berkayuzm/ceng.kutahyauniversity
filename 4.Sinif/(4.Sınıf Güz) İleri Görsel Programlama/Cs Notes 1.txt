@@ -1,0 +1,2952 @@
+Console.Write(" typeof(byte) = {0}\n", typeof(byte));
+Console.Write(" sizeof(byte) = {0} Byte\n", sizeof(byte));
+Console.Write("     MinValue = {0,3}\n", byte.MinValue);
+Console.Write("     MaxValue = {0,3}\n\n", byte.MaxValue);
+Console.Write("typeof(sbyte) = {0}\n", typeof(sbyte));
+Console.Write("sizeof(sbyte) = {0} Byte\n", sizeof(sbyte));
+Console.Write("     MinValue = {0,4}\n", sbyte.MinValue);
+Console.Write("     MaxValue = {0,4}\n\n", sbyte.MaxValue);
+byte a = 43;
+Console.Write("            a = {0,3}\n", a);
+Console.Write("     (byte)~a = {0,3}\n", (byte)~a);
+Console.Write("  a.GetType() = {0}\n\n", a.GetType());
+byte b = 200, c = 100, d;
+d = (byte)(b + c);
+Console.Write("\tb = {0,3}\n\tc = {1,3}\n", b, c);
+Console.Write("\td = {0,3} ( d = b + c )\n\n", d);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.Write("  typeof(short) = {0}\n", typeof(short));
+Console.Write("  sizeof(short) = {0} Bytes\n", sizeof(short));
+Console.Write("       MinValue = {0}\n", short.MinValue);
+Console.Write("       MaxValue =  {0}\n", short.MaxValue);
+Console.Write(" typeof(ushort) = {0}\n", typeof(ushort));
+Console.Write(" sizeof(ushort) = {0} Bytes\n", sizeof(ushort));
+Console.Write("       MinValue = {0}\n", ushort.MinValue);
+Console.Write("       MaxValue = {0}\n", ushort.MaxValue);
+Console.Write("    typeof(int) = {0}\n", typeof(int));
+Console.Write("    sizeof(int) = {0} Bytes\n", sizeof(int));
+Console.Write("       MinValue = {0}\n", int.MinValue);
+Console.Write("       MaxValue =  {0}\n", int.MaxValue);
+Console.Write("   typeof(uint) = {0}\n", typeof(uint));
+Console.Write("   sizeof(uint) = {0} Bytes\n", sizeof(uint));
+Console.Write("       MinValue = {0}\n", uint.MinValue);
+Console.Write("       MaxValue = {0}\n", uint.MaxValue);
+Console.Write("   typeof(long) = {0}\n", typeof(long));
+Console.Write("   sizeof(long) = {0} Bytes\n", sizeof(long));
+Console.Write("       MinValue = {0}\n", long.MinValue);
+Console.Write("       MaxValue =  {0}\n", long.MaxValue);
+Console.Write("  typeof(ulong) = {0}\n", typeof(ulong));
+Console.Write("  sizeof(ulong) = {0} Bytes\n", sizeof(ulong));
+Console.Write("       MinValue = {0}\n", ulong.MinValue);
+Console.Write("       MaxValue = {0}\n", ulong.MaxValue);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.Write("   typeof(float) = {0}\n", typeof(float));
+Console.Write("   sizeof(float) = {0} Bytes\n", sizeof(float));
+Console.Write("        MinValue = {0,13}\n", float.MinValue);
+Console.Write("        MaxValue = {0,13}\n\n", float.MaxValue);
+Console.Write("  typeof(double) = {0}\n", typeof(double));
+Console.Write("  sizeof(double) = {0} Bytes\n", sizeof(double));
+Console.Write("        MinValue = {0,22}\n", double.MinValue);
+Console.Write("        MaxValue = {0,22}\n\n", double.MaxValue);
+Console.Write(" typeof(decimal) = {0}\n", typeof(decimal));
+Console.Write(" sizeof(decimal) = {0} Bytes\n", sizeof(decimal));
+Console.Write("        MinValue = {0,30}\n", decimal.MinValue);
+Console.Write("        MaxValue = {0,30}\n\n", decimal.MaxValue);
+float f = float.Epsilon;
+Console.Write(" f = float.Epsilon  ---> {0}\n", f);
+Console.Write(" f += 3             ---> {0}\n", f += 3);
+Console.Write(" f -= 3             ---> {0}\n", f -= 3);
+double d = double.Epsilon;
+Console.Write(" d = double.Epsilon ---> {0}\n", d);
+Console.Write(" d += 3             ---> {0}\n", d += 3);
+Console.Write(" d -= 3             ---> {0}\n", d -= 3);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+int x = 100;
+Console.Write("Integer\n");
+Console.Write("   x : {0,4}\n", x);
+Console.Write("  ~x : {0,4}\n", ~x);
+Console.Write(" ++x : {0,4}\n", ++x);
+Console.Write(" --x : {0,4}\n\n", --x);
+int y = int.MinValue;
+Console.Write("int.MinValue\n");
+Console.Write("   y : {0,11}\n", y);
+Console.Write("  ~y : {0,11}\n", ~y);
+Console.Write(" --y : {0,11}\n", --y);
+Console.Write(" ++y : {0,11}\n\n", ++y);
+int z = int.MaxValue;
+Console.Write("int.MaxValue\n");
+Console.Write("   z : {0,11}\n", z);
+Console.Write("  ~z : {0,11}\n", ~z);
+Console.Write(" ++z : {0,11}\n", ++z);
+Console.Write(" --z : {0,11}\n\n", --z);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.WriteLine("CSharp Programlama");
+Console.WriteLine("CSharp Programlama\n");
+string str = "CSharp Programlama";
+string s = str + "\n" + str + "\n";
+Console.WriteLine(s);
+s = String.Format("{0}\n{0}\n", str);
+Console.WriteLine(s);
+for (int i = 0; i < 5; i++) Console.WriteLine(str);
+Console.WriteLine();
+string s1 = "CSharp", s2 = "Programlama";
+Console.WriteLine("{0} {1}\n{0} {1}\n", s1, s2);
+s = String.Format("{0} {1}\n{0} {1}\n", s1, s2);
+Console.WriteLine(s);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+float Pi1 = (float)Math.PI;
+Console.Write("Pi Sayısı = {0}\n", Pi1.GetType());
+Console.Write("Pi Sayısı = {0}\n\n", Pi1);
+double Pi2 = Math.PI;
+Console.Write("Pi Sayısı = {0}\n", Pi2.GetType());
+Console.Write("Pi Sayısı = {0}\n\n", Pi2);
+decimal Pi3 = (decimal)Math.PI;
+Console.Write("Pi Sayısı = {0}\n", Pi3.GetType());
+Console.Write("Pi Sayısı = {0}\n\n", Pi3);
+decimal x = 17m / 3;
+Console.Write("Decimal X = {0}\n", x);
+Console.Write(" Double X = {0}\n", (double)x);
+Console.Write("  Float X = {0}\n\n", (float)x);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.Write("sizeof(char) = {0} Bytes\n", sizeof(char));
+Console.Write("typeof(char) = {0}\n", typeof(char));
+Console.Write("    MinValue = {0}\n", (int)char.MinValue);
+Console.Write("    MaxValue = {0}\n\n", (int)char.MaxValue);
+char ch = 'A';
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = 'a';
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = (char)48;
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = (char)57;
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = (char)350;
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = 'ş';
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = 'ğ';
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = 'ü';
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = (char)1000;
+Console.Write("{0,6} ---> {1}\n", (int)ch, ch);
+ch = (char)5000;
+Console.Write("{0,6} ---> {1}\n\n", (int)ch, ch);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.Write("        245/3 = {0}\n", 245 / 3);
+Console.Write("       245f/3 = {0}\n", 245f / 3);
+Console.Write("       245d/3 = {0}\n", 245d / 3);
+Console.Write("       245m/3 = {0}\n", 245m / 3);
+Console.Write("      245.0/3 = {0}\n", 245.0 / 3);
+Console.Write("  (float)17/3 = {0}\n", (float)17 / 3);
+Console.Write(" (double)17/3 = {0}\n", (double)17 / 3);
+Console.Write("(decimal)17/3 = {0}\n\n", (decimal)17 / 3);
+double x = 43.7585;
+Console.WriteLine("{0:0.000}", x);
+Console.WriteLine("{0:0.00000}", x);
+Console.WriteLine("{0:0.###}", x);
+Console.WriteLine("{0:0.#####}", x);
+Console.WriteLine("{0:F9}", x);
+Console.WriteLine("{0,12:F6}\n", x);
+double a = 0, b = 1, c = -1;
+Console.Write("a : {0}, b : {1}, c : {2}\n", a, b, c);
+Console.Write("a/a is {0,9} : ", a / a);
+Console.Write("{0}\n", double.IsNaN(a / a));
+Console.Write("b/a is {0,9} : ", b / a);
+Console.Write("{0}\n", double.IsPositiveInfinity(b / a));
+Console.Write("c/a is {0,9} : ", c / a);
+Console.Write("{0}\n\n", double.IsNegativeInfinity(c / a));
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.Write("     typeof(bool) = {0}\n", typeof(bool));
+Console.Write("     sizeof(bool) = {0} Byte\n", sizeof(bool));
+Console.Write(" bool.FalseString = {0}\n", bool.FalseString);
+Console.Write(" bool.TrueString  = {0}\n\n", bool.TrueString);
+bool a = false;
+Console.Write("{0,19} {1}\n", "a =", a);
+Console.Write("{0,19} {1}\n", "!a =", !a);
+Console.Write("{0,19} {1}\n\n", "a.GetType() =", a.GetType());
+Console.Write("{0,8} && {1,5} = {2,5}\n", false, false, false && false);
+Console.Write("{0,8} && {1,5} = {2,5}\n", false, true, false && true);
+Console.Write("{0,8} && {1,5} = {2,5}\n", true, false, true && false);
+Console.Write("{0,8} && {1,5} = {2,5}\n\n", true, true, true && true);
+Console.Write("{0,8} || {1,5} = {2,5}\n", false, false, false || false);
+Console.Write("{0,8} || {1,5} = {2,5}\n", false, true, false || true);
+Console.Write("{0,8} || {1,5} = {2,5}\n", true, false, true || false);
+Console.Write("{0,8} || {1,5} = {2,5}\n\n", true, true, true || true);
+int x = 10, y = 15, z = 20;
+Console.WriteLine(x < y && y < z);
+Console.WriteLine(x < y && y == z);
+Console.WriteLine(x < y || y == z);
+Console.WriteLine(!(x < y || y == z) + "\n");
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.Write("m = {0,5} ---> Ox{0:X8}\n", 1000);
+Console.Write("n = {0,5} ---> Ox{0:X8}\n\n", ~1000);
+ushort a = 0xA3D9;
+Console.Write("     a = Ox{0:X4} ---> {0:D5}\n", a);
+ushort f = (ushort)(~a);
+Console.Write("    ~a = Ox{0:X4} ---> {0:D5}\n", f);
+f = (ushort)(a >> 8);
+Console.Write("a >> 8 = Ox{0:X4} ---> {0:D5}\n", f);
+f = (ushort)(a << 8);
+Console.Write("a << 8 = Ox{0:X4} ---> {0:D5}\n\n", f);
+ushort b = 0x2E7A;
+Console.Write("     b = Ox{0:X4} ---> {0:D5}\n", b);
+f = (ushort)(~b);
+Console.Write("    ~b = Ox{0:X4} ---> {0:D5}\n", f);
+f = (ushort)(b >> 8);
+Console.Write("b >> 8 = Ox{0:X4} ---> {0:D5}\n", f);
+f = (ushort)(b << 8);
+Console.Write("b << 8 = Ox{0:X4} ---> {0:D5}\n\n", f);
+Console.Write("     a = Ox{0:X4} ---> {0:D5}\n", a);
+Console.Write("     b = Ox{0:X4} ---> {0:D5}\n", b);
+f = (ushort)(a & b);
+Console.Write(" a & b = Ox{0:X4} ---> {0:D5}\n", f);
+f = (ushort)(a | b);
+Console.Write(" a | b = Ox{0:X4} ---> {0:D5}\n\n", f);
+int x = 12345, y = 4567, z;
+Console.Write(" x = {0,5}\n y = {1,5}\n", x, y);
+z = x ^ y;
+Console.Write(" z = x ^ y ---> {0,5}\n", z);
+x = y ^ z;
+Console.Write(" x = y ^ z ---> {0,5}\n", x);
+y = x ^ z;
+Console.Write(" y = x ^ z ---> {0,5}\n\n", y);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.WriteLine($"Math.Abs(23.7) = {Math.Abs(23.7)}");
+Console.WriteLine($"Math.Abs(0.0) = {Math.Abs(0.0)}");
+Console.WriteLine($"Math.Abs(-23.7) = {Math.Abs(-23.7)}");
+Console.WriteLine($"Math.Ceiling(9.2) = {Math.Ceiling(9.2)}");
+Console.WriteLine($"Math.Ceiling(-9.8) = {Math.Ceiling(-9.8)}");
+Console.WriteLine($"Math.Cos(0.0) = {Math.Cos(0.0)}");
+Console.WriteLine($"Math.Exp(1.0) = {Math.Exp(1.0)}");
+Console.WriteLine($"Math.Exp(2.0) = {Math.Exp(2.0)}");
+Console.WriteLine($"Math.Floor(9.2) = {Math.Floor(9.2)}");
+Console.WriteLine($"Math.Floor(-9.8) = {Math.Floor(-9.8)}");
+Console.WriteLine($"Math.Log(Math.E) = {Math.Log(Math.E)}");
+Console.WriteLine($"Math.Log(Math.E * Math.E) = {Math.Log(Math.E * Math.E)}");
+Console.WriteLine($"Math.Max(2.3, 12.7) = {Math.Max(2.3, 12.7)}");
+Console.WriteLine($"Math.Max(-2.3, -12.7) = {Math.Max(-2.3, -12.7)}");
+Console.WriteLine($"Math.Min(2.3, 12.7) = {Math.Min(2.3, 12.7)}");
+Console.WriteLine($"Math.Min(-2.3, -12.7) = {Math.Min(-2.3, -12.7)}");
+Console.WriteLine($"Math.Pow(2.0, 7.0) = {Math.Pow(2.0, 7.0)}");
+Console.WriteLine($"Math.Pow(9.0, 0.5) = {Math.Pow(9.0, 0.5)}");
+Console.WriteLine($"Math.Sin(0.0) = {Math.Sin(0.0)}");
+Console.WriteLine($"Math.Sqrt(900.0) = {Math.Sqrt(900.0)}");
+Console.WriteLine($"Math.Tan(0.0) = {Math.Tan(0.0)}\n");
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Complex z = new Complex(3, 4);
+Console.Write("  Karmaşık Sayı : {0}\n", z);
+Console.Write("     Real Kısım : {0}\n", z.Real);
+Console.Write("İmejineri Kısım : {0}\n", z.Imaginary);
+Console.Write("Exp({0}) = {1}\n", z, Complex.Exp(z));
+Console.Write("Cos({0}) = {1}\n", z, Complex.Cos(z));
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+DateTime dt = new DateTime(2012, 6, 23, 16, 5, 7, 999);
+string str = String.Format("{0:yy yyyy}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:MM MMMM}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:dd dddd}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:hh HH}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:m mm}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:s ss}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:fff}", dt);
+Console.WriteLine(str + "\n");
+str = String.Format("{0:t}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:d}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:T}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:D}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:f}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:F}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:g}", dt);
+Console.WriteLine(str);
+str = String.Format("{0:G}", dt);
+Console.WriteLine(str + "\n");
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+DateTime dt = new DateTime(2017, 10, 26);
+Console.WriteLine("          dt : " + dt);
+dt = dt.AddYears(1);
+dt = dt.AddMonths(5);
+dt = dt.AddDays(4);
+dt = dt.AddHours(3);
+dt = dt.AddMinutes(30);
+dt = dt.AddSeconds(15);
+Console.WriteLine(" Eklenmiş dt : {0}", dt);
+TimeSpan hafta = new TimeSpan(7, 0, 0, 0);
+Console.WriteLine("     1 Hafta : {0}", hafta);
+dt -= hafta;
+Console.WriteLine("1 Hafta Önce : {0}\n", dt);
+dt = DateTime.Now;
+Console.WriteLine("          dt : {0}", dt);
+Console.WriteLine("     dt.Date : {0}", dt.Date);
+Console.WriteLine("      dt.Day : {0}", dt.Day);
+Console.WriteLine("dt.DayOfWeek : {0}", dt.DayOfWeek);
+Console.WriteLine("dt.DayOfYear : {0}", dt.DayOfYear);
+Console.WriteLine("    dt.Ticks : {0}", dt.Ticks);
+Console.WriteLine("dt.TimeOfDay : {0}\n", dt.TimeOfDay);
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+Console.SetWindowSize(50, 30);
+Console.SetBufferSize(50, 30);
+Console.BackgroundColor = ConsoleColor.Green;
+Console.Clear();
+Console.BackgroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.Red;
+ConsoleKeyInfo tus;
+Console.CursorVisible = false;
+int w = Console.WindowWidth;
+int h = Console.WindowHeight;
+int x = w / 2;
+int y = h / 2;
+while (true)
+{
+	Console.CursorLeft = x;
+	Console.CursorTop = y;
+	Console.Write('*');
+	tus = Console.ReadKey(true);
+	if (tus.Key == ConsoleKey.Escape) break;
+	else if (tus.Key == ConsoleKey.LeftArrow) x--;
+	else if (tus.Key == ConsoleKey.RightArrow) x++;
+	else if (tus.Key == ConsoleKey.UpArrow) y--;
+	else if (tus.Key == ConsoleKey.DownArrow) y++;
+	if (x < 0) x = w - 1; else if (x > w - 1) x = 0;
+	if (y < 0) y = h - 1; else if (y > h - 1) y = 0;
+}
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey();
+
+char[] english = {'\u0057', '\u0065', '\u006C', '\u0063', '\u006F', '\u006D',
+'\u0065', '\u0020', '\u0074', '\u006F', '\u0020' };
+lblEnglish.Text = new string(english) + "Unicode" + '\u0021';
+
+Console.WriteLine("Min Max Tarih");
+Console.WriteLine(DateTime.MinValue);
+Console.WriteLine(DateTime.MaxValue);
+Console.WriteLine();
+Console.WriteLine(DateTime.Now);
+Console.WriteLine(DateTime.Today);
+DateTime Tarih = new DateTime();
+DateTime Zaman = new DateTime();
+Console.WriteLine(Tarih);
+Console.WriteLine(Zaman);
+Tarih = DateTime.Today;
+Zaman = DateTime.Now;
+Console.WriteLine(Tarih);
+Console.WriteLine(Zaman);
+
+Console.WriteLine(17 / 3);
+Console.WriteLine(17F / 3);
+Console.WriteLine(17.0 / 3);
+Console.WriteLine(17D / 3);
+Console.WriteLine(17M / 3);
+Console.WriteLine();
+
+var a = (decimal)17 / 3;
+Console.WriteLine("{0}", a);
+Console.WriteLine("{0:F18}\n", a);
+
+double b = 12345.7999123456788888;
+Console.WriteLine("{0}", b);
+Console.WriteLine("{0:F3}", b);
+Console.WriteLine("{0:0.000}", b);
+Console.WriteLine("{0:0.###}", b);
+Console.WriteLine("{0:F18}", b);
+Console.WriteLine("{0,20:F9}\n", b);
+
+Console.WriteLine(" float.Epsilon      --->  {0}", float.Epsilon);
+Console.WriteLine(" float.Epsilon + 3  --->  {0}", float.Epsilon + 3);
+Console.WriteLine("double.Epsilon      --->  {0}", double.Epsilon);
+Console.WriteLine("double.Epsilon + 3  --->  {0}\n", double.Epsilon + 3);
+
+const double a = -14.65;
+Console.WriteLine("\t     Abs( {0} ) = {1}", a, Math.Abs(a));
+Console.WriteLine("\tTruncate( {0} ) = {1}", a, Math.Truncate(a));
+Console.WriteLine("\t   Round( {0} ) = {1}", a, Math.Round(a));
+Console.WriteLine("\t   Floor( {0} ) = {1}", a, Math.Floor(a));
+Console.WriteLine("\t Ceiling( {0} ) = {1}\n", a, Math.Ceiling(a));
+
+const double b = -74.85;
+Console.WriteLine("\tMin({0},{1}) = {2}", a, b, Math.Min(a, b));
+Console.WriteLine("\tMax({0},{1}) = {2}\n", a, b, Math.Max(a, b));
+
+double c = -7.5;
+Console.WriteLine("\t\tSign({0,4}) = {1,2}", c, Math.Sign(c));
+c = 0.0;
+Console.WriteLine("\t\tSign({0,4}) = {1,2}", c, Math.Sign(c));
+c = 5.9;
+Console.WriteLine("\t\tSign({0,4}) = {1,2}\n", c, Math.Sign(c));
+
+const int key = 0x5c;
+string s = "Görsel Programlama";
+char[] a = s.ToCharArray();
+int n = s.Length;
+Console.Write("      Orjinal Mesaj : {0}\n", s);
+Console.Write("    Kodlanmýþ Mesaj : ");
+for (int i = 0; i < n; i++)
+a[i] = (char)(a[i] ^ key);
+Console.WriteLine(a);
+Console.Write("Kodu Çözülmüþ Mesaj : ");
+for (int i = 0; i < n; i++)
+a[i] = (char)(a[i] ^ key);
+Console.WriteLine(a);
+
+Console.Title = "Console Uygulaması";
+Console.BackgroundColor = ConsoleColor.White;
+Console.ForegroundColor = ConsoleColor.Black;
+Console.Clear();
+Console.Write("   Adınızı Giriniz : ");
+string ad = Console.ReadLine();
+Console.Write("Soyadınızı Giriniz : ");
+string syd = Console.ReadLine();
+Console.ResetColor();
+Console.Clear();
+Console.WriteLine("Sayın {0} {1}\n", ad, syd);
+
+string s = "String Uzunluğu";
+string str = "CSharp Programlama Dersi";
+Console.WriteLine(str);
+Console.WriteLine("{0}\n{0}\n", str);
+Console.WriteLine("{0,18} : {1}\n", s, str.Length);
+
+char[] a = str.ToCharArray();
+Console.WriteLine(a);
+for (int i = 0; i < a.Length; i++) Console.Write(a[i]);
+Console.WriteLine("\n{0,19} : {1}\n", "Char Dizi Uzunluğu", a.Length);
+string s = new string(a);
+Console.WriteLine("{0}", s);
+Console.WriteLine("{0,19} : {1}\n", "String Uzunluğu", s.Length);
+
+class Program
+{
+	static void Yordam1() {
+		for (int i = 0; i < 15; i++) {
+			Console.Write("Hasan\n");
+			Thread.Sleep(1000);
+		}
+	}
+	static void Yordam2() {
+		for (int i = 0; i < 12; i++) {
+			Console.Write("Temurtaş\n");
+			Thread.Sleep(1500);
+		}
+	}
+	static void Main(string[] args) {
+		Console.Title = "Hasan TEMURTAŞ";
+		Thread thr1 = new Thread(new ThreadStart(Yordam1));
+		Thread thr2 = new Thread(new ThreadStart(Yordam2));
+		thr1.Start();
+		thr2.Start();
+		//Thread.Sleep(9000);
+		//thr1.Abort();
+		//thr2.Abort();
+		while (thr1.IsAlive || thr2.IsAlive);
+		Console.Write("Çıkış için bir tuşa basınız");
+		Console.ReadKey(true);
+	}
+}
+
+class Program
+{
+	static void Yordam1()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			Console.WriteLine("Yordam 1 - Say {0}", i);
+			Thread.Sleep(1000);
+		}
+	}
+	static void Yordam2()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			Console.WriteLine("Yordam 2 - Say {0}", i);
+			Thread.Sleep(1500);
+		}
+	}
+	static void Main(string[] args) {
+		Console.Title = "Hasan TEMURTAŞ";
+		Thread thr1 = Thread.CurrentThread;
+		if (thr1.Name == null) thr1.Name = "Main Thread";
+		Console.Write(" {0} is alive : {1}\n", thr1.Name, thr1.IsAlive);
+		Thread thr2 = new Thread(new ThreadStart(Yordam2));
+		if (thr2.Name == null) thr2.Name = "Child Thread";
+		Console.Write("{0} is alive : {1}\n", thr2.Name, thr2.IsAlive);
+		thr2.Start();
+		Console.Write("{0} is alive : {1}\n", thr2.Name, thr2.IsAlive);
+		Yordam1();
+		while (thr2.IsAlive); // Main içinde thr1 Alive
+		Console.Write("Çıkış için bir tuşa basınız");
+		Console.ReadKey(true);
+	}
+}
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Title = "Dosyalama İşlemleri - Yaz";
+		Random rnd = new Random();
+		int i, j, m = rnd.Next(10, 21), n = rnd.Next(5, 9);
+		double[,] a = new double[m, n];
+		string str = @"..\..\..\dosya.txt";
+		StreamWriter sw = File.CreateText(str);
+		sw.WriteLine("{0,9}{1,9}", m, n);
+		Console.WriteLine("{0,9}{1,9}", m, n);
+		for (i = 0; i < m; i++)
+		{
+			for (j = 0; j < n; j++)
+			{
+				a[i, j] = Math.Round(50 - 100 * rnd.NextDouble(), 3);
+				sw.Write("{0,9}", a[i, j]);
+				Console.Write("{0,9}", a[i, j]);
+			}
+			sw.WriteLine();
+			Console.WriteLine();
+		}
+		sw.Close();
+		Console.Write("Çıkış için bir tuşa basınız");
+		Console.ReadKey(true);
+	}
+}
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		Console.Title = "Dosyalama İşlemleri - Oku";
+		string str = @"..\..\..\dosya.txt";
+		if (File.Exists(str))
+		{
+			StreamReader sr = File.OpenText(str);
+			int i, j, k = 0, m = 0, n = 0;
+			string[] sDizi = sr.ReadLine().Split();
+			for (i = 0; i < sDizi.Length; i++)
+				if (int.TryParse(sDizi[i], out j))
+					if (++k == 1) m = j;
+					else
+					{
+						n = j;
+						break;
+					}
+			Console.WriteLine("{0,9}{1,9}", m, n);
+			double[,] a = new double[m, n];
+			for (i = 0; i < m; i++)
+			{
+				k = 0;
+				sDizi = sr.ReadLine().Split();
+				for (j = 0; j < sDizi.Length; j++)
+					if (double.TryParse(sDizi[j], out a[i, k]))
+					{
+						Console.Write("{0,9}", a[i, k]);
+						if (++k == n) break;
+					}
+				Console.WriteLine();
+			}
+			sr.Close();
+		}
+		else Console.WriteLine("Okunacak Dosya Yok");
+		Console.Write("Çıkış için bir tuşa basınız");
+		Console.ReadKey(true);
+	}
+}
+
+//float x;
+double x;
+//decimal x;
+string str;
+while(true) {
+	Console.Write("{0,21}", "Reel Sayı Gir : ");
+	str = Console.ReadLine();
+	//if (float.TryParse(str, out x)) break;
+	if (double.TryParse(str, out x)) break;
+	//if (decimal.TryParse(str, out x)) break;
+}
+Console.Write("{0,21}{1}\n\n", "Girilen Reel Sayı : ", x);
+
+int x;
+Console.Write("String Gir : ");
+while(true) {
+	x = Console.Read();
+	if (x == 13) break;
+	Console.WriteLine("{0,5} : {1}", x, (char)x);
+}
+
+int x = 1024 + 45;
+byte y = (byte)x;
+Console.Write("x = {0,4}\ny = {1,4}\n", x, y);
+int z = x % 256;
+Console.Write("z = {0,4}\n\n", z);
+
+static void YazList(List<int> list)
+{
+	Console.Write("List : ");
+	for (int i = 0; i < list.Count; i++)
+	{
+		if (i > 0) Console.Write(", ");
+		Console.Write(list[i]);
+	}
+	Console.WriteLine("\nCount : {0}, Capacity : {0}\n",
+		list.Count, list.Capacity);
+}
+Random rnd = new Random();
+List<int> lst = new List<int>();
+YazList(lst);
+int[] a = new int[] { 53, 47, 27, 13, 89, 67, 32 };
+lst.Add(10);
+lst.AddRange(a);
+lst.Add(99);
+YazList(lst);
+lst.RemoveAt(5);
+lst.RemoveRange(2, 3);
+YazList(lst);
+lst.Reverse();
+lst.TrimExcess();
+YazList(lst);
+int[] b = lst.ToArray();
+lst.Clear();
+YazList(lst);
+lst.AddRange(a);
+lst.AddRange(b);
+YazList(lst);
+
+ArrayList lst = new ArrayList();
+lst.Add("Dumlupınar Üniversitesi");
+lst.Add("Mühendislik Fakültesi");
+string[] dizi = new string[3];
+dizi[0] = "Bilgisayar Mühendisliği Bölümü";
+dizi[1] = "Hasan TEMURTAŞ";
+dizi[2] = "Görsel Programlama Dersi";
+lst.AddRange(dizi);
+foreach (string str in lst)
+	Console.Write(str + "\n");
+Console.WriteLine();
+lst.RemoveRange(1, 2);
+for (int i = 0; i < lst.Count; i++)
+	Console.Write(lst[i] + "\n");
+Console.WriteLine();
+string[] diz = new string[lst.Count];
+lst.CopyTo(diz, 0);
+foreach (string str in diz)
+	Console.Write(str + "\n");
+Console.WriteLine();
+
+LinkedList<int> lst = new LinkedList<int>();
+lst.AddFirst(0);
+lst.AddFirst(1);
+lst.AddLast(2);
+lst.AddLast(3);
+lst.RemoveFirst();
+lst.AddFirst(4);
+lst.AddFirst(5);
+lst.AddLast(6);
+lst.RemoveFirst();
+lst.RemoveLast();
+lst.AddLast(7);
+lst.AddFirst(8);
+lst.AddFirst(9);
+LinkedListNode<int> node;
+Console.WriteLine("Bağlı Liste Uzunluğu  = {0}", lst.Count);
+Console.Write("Bağlı Liste Değerleri = ");
+for (node = lst.First; node != null; node = node.Next) {
+	if (node != lst.First) Console.Write(", ");
+	Console.Write(node.Value);
+}
+
+int i, n = args.Length;
+if (n < 2)
+{
+	Console.WriteLine("En Az 2 Parametre Olmalı");
+	return;
+}
+double sayi;
+for (i = 0; i < n; i++)
+	if (!double.TryParse(args[i], out sayi))
+	{
+		Console.WriteLine("Parametreler Reel Sayı Olmalı");
+		return;
+	}
+double toplam = 0;
+for (i = 0; i < n; i++)
+{
+	//sayi = Convert.ToDouble(dizi[i]);
+	sayi = double.Parse(args[i]);
+	Console.WriteLine("{0,3}.sayı : {1}", i + 1, sayi);
+	toplam += sayi;
+}
+Console.WriteLine("  Toplam = " + toplam);
+
+var sw = Stopwatch.StartNew();
+for (int i = 0; i < 10; i++) {
+	// sw.Start();
+	sw.Restart();
+	Thread.Sleep(1000);
+	sw.Stop();
+	Console.WriteLine("Süre : {0,4} ms ---> {1} tick",
+		sw.ElapsedMilliseconds, sw.ElapsedTicks);
+	// sw.Reset();
+}
+
+Console.SetWindowSize(40, 32);
+Console.SetBufferSize(40, 32);
+int i;
+const int n = 25, t = 500;
+const string str = "Görsel Programlama";
+for (i = 1; i <= n; i++) {
+	if (i == 4 || i == 7 || i == 9) continue;
+	else if (i == 13) break;
+	Console.WriteLine("{0,10}{1,21}", i, str);
+	Thread.Sleep(t);
+}
+Console.WriteLine();
+i = 0;
+while (i < n) {
+	i++;
+	if (i == 4 || i == 7 || i == 9) continue;
+	else if (i == 13) break;
+	Console.WriteLine("{0,10}{1,21}", i, str);
+	Thread.Sleep(t);
+}
+Console.WriteLine();
+i = 0;
+do {
+	i++;
+	if (i == 4 || i == 7 || i == 9) continue;
+	else if (i == 13) break;
+	Console.WriteLine("{0,10}{1,21}", i, str);
+	Thread.Sleep(t);
+} while (i < n);
+Console.WriteLine();
+
+Console.Title = "Sayısal Loto";
+int i, j, k, n, kolon, gec;
+int[] a = new int[6];
+Random rnd = new Random();
+while (true) {
+	Console.Write("Kolon Sayısı ( 1 ile 20 arası ) : ");
+	if (int.TryParse(Console.ReadLine(), out kolon))
+	{
+		if (kolon < 1 || kolon > 20)
+			Console.WriteLine("Sayı Aralık Dışı\n");
+		else break;
+	}
+	else
+	{
+		Console.WriteLine("Girdiğiniz sayı tamsayı değil");
+		Console.WriteLine("Lütfen bir tamsayı giriniz . . .\n");
+	}
+}
+Console.Clear();
+Console.WriteLine("Kolon Sayısı = {0,3}", kolon);
+for (k = 1; k <= kolon; k++) {
+	Console.Write("{0,3}.kolon ---> ", k);
+	a[0] = rnd.Next(1, 50);
+	for (i = 1; i <= 5; i++) {
+		do {
+			a[i] = rnd.Next(1, 50);
+			n = 0;
+			for (j = 0; j < i; j++)
+				if (a[i] == a[j]) n++;
+		} while (n > 0);
+		for (j = 0; j < i; j++)
+			if (a[j] > a[i])
+			{
+				gec = a[j];
+				a[j] = a[i];
+				a[i] = gec;
+			}
+	}
+	for (i = 0; i <= 5; i++) Console.Write("{0,3}", a[i]);
+	Console.WriteLine();
+}
+
+static void Baslik()
+{
+	Console.Title = "Hasan TEMURTAŞ";
+}
+static void TusBekle()
+{
+	Console.Write("Çıkış için bir tuşa basınız");
+	Console.ReadKey();
+}
+static void Yaz1(string[] dizi)
+{
+	Console.Write(" Kişiler\n---------\n");
+	foreach (string s in dizi)
+	{
+		Console.Write("{0}\n", s);
+		Thread.Sleep(500);
+	}
+	Console.WriteLine();
+}
+static void Yaz2(string[] dizi)
+{
+	Console.Write(" Kişiler\n---------\n");
+	for (int i = 0; i < dizi.Length; i++)
+	{
+		Console.Write("{0}\n", dizi[i]);
+		Thread.Sleep(500);
+	}
+	Console.WriteLine();
+}
+static void Main() {
+	string[] data = { "Hasan", "Ahmet", "Şeref", "Recep",
+			"Bahadır", "Hakan", "Serkan", "Beyza", "Serdar" };
+	Baslik();
+	Yaz1(data);
+	Yaz2(data);
+	TusBekle();
+}
+
+class Kişi {
+	static int say;
+	string ism, syd;
+	public Kişi(string isim, string soyad) {
+		ism = isim;
+		syd = soyad;
+		Console.Write("{0} {1} ---> Kişi oluşturuldu\n", ism, syd);
+		Console.Write("Toplam Kişi Sayısı : {0}\n", ++say);
+		Thread.Sleep(1000);
+	}
+	~Kişi() {
+		Console.Write("{0} {1} ---> Kişi hafızadan silindi\n", ism, syd);
+		Console.Write("Toplam Kişi Sayısı : {0}\n", --say);
+		Thread.Sleep(1000);
+	}
+}
+Kişi kişi1 = new Kişi("Hasan", "Temurtaş");
+Kişi kişi2 = new Kişi("Ahmet", "Başaran");
+Kişi kişi3 = new Kişi("Ferhat", "Yeşilyurt");
+Kişi kişi4 = new Kişi("Cemil", "Çoktemiz");
+Kişi kişi5 = new Kişi("Sedat", "İyibilen");
+Kişi kişi6 = new Kişi("Bilge", "Meraklı");
+Kişi kişi7 = new Kişi("Cengiz", "Yılmaz");
+kişi1 = null;
+kişi3 = null;
+kişi5 = null;
+Console.Write("\nÇöp toplayıcısını devreye sokmak için bir tuşa basınız");
+Console.ReadKey(true);
+Console.Write("\n\n");
+GC.Collect();
+GC.WaitForPendingFinalizers();
+Console.Write("\nÇıkış için bir tuşa basınız");
+Console.ReadKey(true);
+Console.Write("\n\n");
+
+
+class Kure {
+	double r;
+	double HesapYuzeyAlan()
+	{
+		double gec = 4 * Math.PI * r * r;
+		return gec;
+	}
+	double HesapHacim()
+	{
+		double gec = (r / 3) * HesapYuzeyAlan();
+		return gec;
+	}
+	public void Run()
+	{
+		Console.Title = "Küre için Yüzey Alanı ve Hacim Hesabı";
+		Console.Write("Pi Sayısı {0} alınacak\n\n", Math.PI);
+		while (true)
+		{
+			Console.Write("Yarıçap : ");
+			if (double.TryParse(Console.ReadLine(), out r)) break;
+			Console.Write("Girilen sayı reel sayı olmalı\n\n");
+		}
+		Console.Write("Kürenin Yüzey Alanı : {0:F6}\n", HesapYuzeyAlan());
+		Console.Write("      Kürenin Hacmi : {0:F6}\n\n", HesapHacim());
+		Console.Write("Çıkış için bir tuşa basınız");
+		Console.ReadKey(true);
+	}
+}
+Kure kure = new Kure();
+kure.Run();
+
+Console.Title = "Hasan TEMURTAŞ";
+Console.BackgroundColor = ConsoleColor.Yellow;
+Console.ForegroundColor = ConsoleColor.Blue;
+Console.Clear();
+Console.WriteLine("Esc çıkar, Enter yeşil yapar.");
+Console.WriteLine("-----------------------------");
+char ch;
+string str;
+while (true)
+{
+	Console.ForegroundColor = ConsoleColor.Red;
+	str = null; // str = String.Empty;
+	while (true)
+	{
+		ch = Console.ReadKey().KeyChar;
+		if (ch == 27) return;
+		if (ch == 13) break;
+		str += ch;
+	}
+	Console.ForegroundColor = ConsoleColor.Green;
+	Console.WriteLine(str);
+	Console.Beep(1500, 250);
+	// Console.Beep();
+}
+
+Console.WriteLine("Programdan ESC ile çıkılır");
+ConsoleKeyInfo tus;
+// CTL+C için programın kapanmasını önle
+Console.TreatControlCAsInput = true;
+do
+{
+	tus = Console.ReadKey();
+	Console.Beep(1500, 250);
+	Console.WriteLine(" ---> .{0}.{1}.{2}.{3}.",
+		(int)tus.KeyChar, tus.KeyChar, tus.Key, tus.Modifiers);
+} while (tus.KeyChar != 27);
+Thread.Sleep(1000);
+
+
+
+string str = "CSharp Programlama";
+char[] a = str.ToCharArray();
+int i, n = a.Length;
+int key = 145;
+Console.Write("       Orjinal Mesaj : ");
+for (i = 0; i < n; i++) Console.Write(a[i]);
+Console.Write("\n     Kodlanmış Mesaj : ");
+for (i = 0; i < n; i++)
+{
+	a[i] = (char)(a[i] ^ key);
+	Console.Write(a[i]);
+}
+Console.Write("\n Kodu Çözülmüş Mesaj : ");
+for (i = 0; i < n; i++)
+{
+	a[i] = (char)(a[i] ^ key);
+	Console.Write(a[i]);
+}
+
+static int n;
+static Timer tmr;
+static void Yordam(object sender, ElapsedEventArgs e) {
+	Console.Write("Say :{0,12}\n", n);
+	if (n < 0) tmr.Enabled = false;
+}
+tmr = new Timer();
+tmr.Elapsed += new ElapsedEventHandler(Yordam);
+tmr.Interval = 250;
+tmr.Enabled = true;
+while (tmr.Enabled) n++;
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey(true);
+
+using System;
+using System.Threading;
+namespace htemurtas {
+    class Program {
+        static void Main() {
+            Console.Title = "Konsol Ekran Renkleri";
+            int i = 0, j = 8;
+            ConsoleColor rnk1, rnk2;
+            while (true)
+            {
+                rnk1 = (ConsoleColor)i;
+                rnk2 = (ConsoleColor)j;
+                Console.BackgroundColor = rnk1;
+                Console.ForegroundColor = rnk2;
+                Console.Clear();
+                Console.WriteLine("ArkaPlan = {0}\t{1}", i, rnk1);
+                Console.WriteLine("  ÖnPlan = {0}\t{1}", j, rnk2);
+                for (int k = 0; k < 40; k++)
+                {
+                    if (Console.KeyAvailable)
+                        if (Console.ReadKey().KeyChar == 27) return;
+                    Thread.Sleep(25);
+                }
+                i = ++i % 16;
+                j = ++j % 16;
+            }
+        }
+    }
+}
+
+using System;
+namespace htemurtas {
+    class Program {
+        static void Main() {
+            double r, yalan, hacim;
+            Console.Title = "Küre için Yüzey Alanı ve Hacim Hesabı";
+            Console.Write("Pi Sayısı {0} alınacak\n\n", Math.PI);
+            while (true)
+            {
+                Console.Write("Yarıçap : ");
+                if (double.TryParse(Console.ReadLine(), out r)) break;
+                Console.Write("Girilen değer reel sayı olmalı\n\n");
+            }
+            yalan = 4 * Math.PI * r * r;
+            hacim = yalan * r / 3;
+            Console.Write("Kürenin Yüzey Alanı : {0:F6}\n", yalan);
+            Console.Write("      Kürenin Hacmi : {0:F6}\n\n", hacim);
+            Console.Write("Çıkış için bir tuşa basınız");
+            Console.ReadKey(true);
+        }
+    }
+}
+
+using System;
+namespace htemurtas {
+    class Program {
+        static void Main() {
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Çıkmak için Çıkış Yazıp Enter Tuşuna Basınız\n");
+            string str;
+            while (true) {
+                Console.Write("Başlık İsmi : ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                str = Console.ReadLine();
+                Console.Title = str;
+                Console.Beep(1500, 250);
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Başlık ismi '{0}' olarak değiştirildi.\n", str);
+                if (str.ToUpper() == "ÇIKIŞ") break;
+            }
+        }
+    }
+}
+
+using System;
+namespace htemurtas {
+    class Program {
+        static void Main() {
+            Console.Title = "Standart Sapma Hesabı";
+            Random rnd = new Random();
+            int i, n = rnd.Next(10, 21);
+            double[] a = new double[n];
+            double sum = 0, sapma = 0;
+            for (i = 0; i < n; i++)
+            {
+                a[i] = Math.Round(100 * rnd.NextDouble(), 6);
+                Console.WriteLine("{0,5}.Sayı = {1,10}", i + 1, a[i]);
+                sum += a[i];
+            }
+            double ort = sum / n;
+            for (i = 0; i < n; i++)
+                sapma += Math.Pow(a[i] - ort, 2);
+            sapma = Math.Sqrt(sapma / n);
+            Console.WriteLine("\n    Toplam = {0}", sum);
+            Console.WriteLine("  Ortalama = {0}", ort);
+            Console.WriteLine(" Std.Sapma = {0}\n", sapma);
+            Console.Write("Çıkış için bir tuşa basınız");
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+namespace htemurtas {
+    class Program {
+        static void Main() {
+            Console.Title = "Rasgele Top Çekilişi";
+            Random rnd = new Random();
+            int k = rnd.Next(6, 21);
+            int[] a = new int[k];
+            int i, n = 1000 * k;
+            for (i = 0; i < n; i++) a[rnd.Next(k)]++;
+            Console.WriteLine("\tÇekiliş Sayısı = {0}", n);
+            Console.WriteLine("\tGelen\tFrekans");
+            for (i = 0; i < k; i++)
+                Console.WriteLine("\t{0,3}\t{1,6}", i + 1, a[i]);
+            Console.Write("Çıkış için bir tuşa basınız");
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+namespace htemurtas {
+    class Program {
+        static void Main() {
+            Console.Title = "2.Dereceden Denklem Köklerinin Hesabı";
+            try
+            {
+                double a, b, c, delta, x1, x2;
+                Console.Write("\ta değeri : ");
+                a = double.Parse(Console.ReadLine());
+                //a = Convert.ToDouble(Console.ReadLine());
+                Console.Write("\tb değeri : ");
+                b = double.Parse(Console.ReadLine());
+                //b = Convert.ToDouble(Console.ReadLine());
+                Console.Write("\tc değeri : ");
+                c = double.Parse(Console.ReadLine());
+                //c = Convert.ToDouble(Console.ReadLine());
+                delta = b * b - 4 * a * c;
+                if (delta < 0) Console.WriteLine("\n\tKökler Sanal");
+                else
+                {
+                    string str = delta > 0 ? "Kökler Reel" : "Kökler Katlı";
+                    Console.WriteLine("\n\t" + str);
+                    x1 = (-b - Math.Sqrt(delta)) / (2 * a);
+                    x2 = (-b + Math.Sqrt(delta)) / (2 * a);
+                    Console.WriteLine("\tx1 = {0}\n\tx2 = {1}", x1, x2);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("\nKatsayıları Reel Sayı Girmelisiniz");
+            }
+            //finally {
+            Console.Write("\nÇıkış için bir tuşa basınız");
+            Console.ReadKey();
+            //}
+        }
+    }
+}
+
+using System;
+namespace htemurtas {
+    class Program {
+        static void Main() {
+            Console.Title = "Cümleyi Kelimelerine Ayır";
+            string str = "  Görsel\n\t\n\tProgramlama\r\n  Dersi\n\t";
+            //string str = "  Hasan  Temurtaş  ";
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.WriteLine("<" + str + ">\n");
+            Console.BackgroundColor = ConsoleColor.Black;
+            //char[] x = {'\n', '\t', '\r', ' ', 'a'};
+            //string[] dizi = str.Split(x);
+            string[] dizi = str.Split();
+            for (int n = 0; n < dizi.Length; n++)
+                if (dizi[n] != string.Empty)
+                    Console.WriteLine("<" + dizi[n] + ">");
+            Console.Write("\nÇıkış için bir tuşa basınız");
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+namespace htemurtas {
+    class Program {
+        static void PrintMatrix(int[,] a)
+        {
+            int i, j;
+            Console.Write("Matris\n");
+            for (i = 0; i < a.GetLength(0); i++)
+            {
+                for (j = 0; j < a.GetLength(1); j++)
+                    Console.Write("{0,5}", a[i, j]);
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+        static void PrintJaggedMatrix(int[][] a)
+        {
+            int i, j;
+            Console.Write("Jagged Matris\n");
+            for (i = 0; i < a.Length; i++)
+            {
+                for (j = 0; j < a[i].Length; j++)
+                    Console.Write("{0,5}", a[i][j]);
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+        static void Main() {
+            Console.Title = "Hasan TEMURTAŞ";
+
+            int[,] mat1 = { {1,2,3,4,5}, {6,7,8,9,10}, {11,12,13,14,15},
+                            {16,17,18,19,20}, {21,22,23,24,25} };
+            PrintMatrix(mat1);
+
+            int[][] mat2 = { new int[] {1,2,3}, new int[] {4}, new int[] {5,6,7,8,9,10},
+                             new int[] {11,12}, new int[] {13,14,15,16,17},
+                             new int[] {18,19,20,21,22,23,24} };
+            PrintJaggedMatrix(mat2);
+
+            Console.Write("Çıkış için bir tuşa basınız");
+            Console.ReadKey(true);
+        }
+    }
+}
+
+static void goster(double x)
+{
+	byte[] a = BitConverter.GetBytes(x);
+	int n = a.Length;
+	Console.WriteLine("{0}",x);
+	for (int i = 0; i < n ; i++)
+		Console.Write(" {0:X2}", a[n-1-i]);
+	Console.WriteLine("\n");
+}
+static void Main(string[] args)
+{
+	Console.Title = "Hasan TEMURTAŞ";
+	double n = double.MaxValue;
+	goster(n);
+	n = 0;
+	goster(n);
+	n = 1;
+	goster(n);
+	n = -1;
+	goster(n);
+	Console.Write("Çıkış için bir tuşa basınız");
+	Console.ReadKey(true);
+}
+
+StringBuilder buffer1, buffer2, buffer3;
+string output;
+buffer1 = new StringBuilder();
+buffer2 = new StringBuilder( 10 );
+buffer3 = new StringBuilder( "hello" );
+output = "buffer1 = \"" + buffer1.ToString() + "\"\n";
+output += "buffer2 = \"" + buffer2.ToString() + "\"\n";
+output += "buffer3 = \"" + buffer3.ToString() + "\"\n";
+MessageBox.Show( output, "Demonstrating StringBuilder class constructors",
+MessageBoxButtons.OK, MessageBoxIcon.Information );
+
+StringBuilder buffer = 
+new StringBuilder( "Hello, how are you?" );
+// use Length and Capacity properties
+string output = "buffer = " + buffer.ToString() +
+"\nLength = " + buffer.Length +
+"\nCapacity = " + buffer.Capacity;
+// use EnsureCapacity method
+buffer.EnsureCapacity( 75 );
+output += "\n\nNew capacity = " +
+buffer.Capacity;
+// truncate StringBuilder by setting Length property
+buffer.Length = 10;
+output += "\n\nNew length = " +
+buffer.Length + "\nbuffer = ";
+// use StringBuilder indexer
+for ( int i = 0; i < buffer.Length; i++ )
+output += buffer[ i ];
+MessageBox.Show( output, "StringBuilder features",
+MessageBoxButtons.OK, MessageBoxIcon.Information );
+
+StringBuilder buffer = new StringBuilder();
+string string1, string2;
+// formatted string
+string1 = "This {0} costs: {1:C}.\n";
+// string1 argument array
+object[] objectArray = new object[ 2 ];
+objectArray[ 0 ] = "car";
+objectArray[ 1 ] = 1234.56;
+// append to buffer formatted string with argument
+buffer.AppendFormat( string1, objectArray );
+// formatted string
+string2 = "Number:{0:d3}.\n" +
+"Number right aligned with spaces:{0, 4}.\n" +
+"Number left aligned with spaces:{0, -4}.";
+// append to buffer formatted string with argument
+buffer.AppendFormat( string2, 5 );
+// display formatted strings
+MessageBox.Show( buffer.ToString(), "Using AppendFormat",
+MessageBoxButtons.OK, MessageBoxIcon.Information );
+
+object objectValue = "hello";
+string stringValue = "good bye";
+char[] characterArray = { 'a', 'b', 'c', 'd', 'e', 'f' };
+bool booleanValue = true;
+char characterValue = 'K';
+int integerValue = 7;
+long longValue = 10000000;
+float floatValue = 2.5F;
+double doubleValue = 33.333;
+StringBuilder buffer = new StringBuilder();
+string output;
+// insert values into buffer
+buffer.Insert(0, objectValue);
+buffer.Insert(0, "  ");
+buffer.Insert(0, stringValue);
+buffer.Insert(0, "  ");
+buffer.Insert(0, characterArray);
+buffer.Insert(0, "  ");
+buffer.Insert(0, booleanValue);
+buffer.Insert(0, "  ");
+buffer.Insert(0, characterValue);
+buffer.Insert(0, "  ");
+buffer.Insert(0, integerValue);
+buffer.Insert(0, "  ");
+buffer.Insert(0, longValue);
+buffer.Insert(0, "  ");
+buffer.Insert(0, floatValue);
+buffer.Insert(0, "  ");
+buffer.Insert(0, doubleValue);
+buffer.Insert(0, "  ");
+output = "buffer after inserts: \n" +
+buffer.ToString() + "\n\n";
+buffer.Remove( 10, 1 ); // delete 2 in 2.5
+buffer.Remove( 2, 4 );  // delete .333 in 33.333
+output += "buffer after Removes:\n" +
+buffer.ToString();
+MessageBox.Show( output, "Demonstrating StringBuilder " +
+"Insert and Remove methods", MessageBoxButtons.OK,
+MessageBoxIcon.Information );
+
+class Account {
+   private string name;
+   public void SetName(string accountName) { name = accountName; }
+   public string GetName() { return name; }
+}
+class AccountTest {
+   static void Main(){
+      Account myAccount = new Account();
+      Console.WriteLine($"Initial name is: {myAccount.GetName()}");
+      Console.Write("Enter the name: ");
+      string theName = Console.ReadLine();
+      myAccount.SetName(theName);
+      Console.WriteLine($"myAccount's name is: {myAccount.GetName()}");
+   }
+}
+
+class Account {
+   private string name;
+   public string Name {
+      get { return name; }
+      set { name = value; }
+   }
+}
+class AccountTest {
+   static void Main() {
+      Account myAccount = new Account();
+      Console.WriteLine($"Initial name is: {myAccount.Name}");
+      Console.Write("Please enter the name: ");
+      string theName = Console.ReadLine();
+      myAccount.Name = theName;
+      Console.WriteLine($"myAccount's name is: {myAccount.Name}");
+   }
+}
+
+class Account {
+   public string Name { get; set; }
+   public Account(string accountName) { Name = accountName; }
+}
+class AccountTest{
+   static void Main(){
+      Account account1 = new Account("Jane Green");
+      Account account2 = new Account("John Blue");
+      Console.WriteLine($"account1 name is: {account1.Name}");
+      Console.WriteLine($"account2 name is: {account2.Name}");
+   }
+}
+
+static void Main()
+{
+  // create truth table for && (conditional AND) operator
+  Console.WriteLine("Conditional AND (&&)");
+  Console.WriteLine($"false && false: {false && false}");
+  Console.WriteLine($"false && true: {false && true}");
+  Console.WriteLine($"true && false: {true && false}");
+  Console.WriteLine($"true && true: {true && true}\n");
+
+  // create truth table for || (conditional OR) operator
+  Console.WriteLine("Conditional OR (||)");
+  Console.WriteLine($"false || false: {false || false}");
+  Console.WriteLine($"false || true: {false || true}");
+  Console.WriteLine($"true || false: {true || false}");
+  Console.WriteLine($"true || true: {true || true}\n");
+
+  // create truth table for & (boolean logical AND) operator
+  Console.WriteLine("Boolean logical AND (&)");
+  Console.WriteLine($"false & false: {false & false}");
+  Console.WriteLine($"false & true: {false & true}");
+  Console.WriteLine($"true & false: {true & false}");
+  Console.WriteLine($"true & true: {true & true}\n");
+
+  // create truth table for | (boolean logical inclusive OR) operator
+  Console.WriteLine("Boolean logical inclusive OR (|)");
+  Console.WriteLine($"false | false: {false | false}");
+  Console.WriteLine($"false | true: {false | true}");
+  Console.WriteLine($"true | false: {true | false}");
+  Console.WriteLine($"true | true: {true | true}\n");
+
+  // create truth table for ^ (boolean logical exclusive OR) operator
+  Console.WriteLine("Boolean logical exclusive OR (^)");
+  Console.WriteLine($"false ^ false: {false ^ false}");
+  Console.WriteLine($"false ^ true: {false ^ true}");
+  Console.WriteLine($"true ^ false: {true ^ false}");
+  Console.WriteLine($"true ^ true: {true ^ true}\n");
+
+  // create truth table for ! (logical negation) operator
+  Console.WriteLine("Logical negation (!)");
+  Console.WriteLine($"!false: {!false}");
+  Console.WriteLine($"!true: {!true}");
+}
+
+class FactorialTest
+{
+   static void Main()
+   {
+      // calculate the factorials of 0 through 10
+      for (long counter = 0; counter <= 10; ++counter)
+      {
+         Console.WriteLine($"{counter}! = {Factorial(counter)}");
+      }
+   }
+   // recursive declaration of method Factorial  
+   static long Factorial(long number)
+   {
+      // base case                               
+      if (number <= 1)
+      {
+         return 1;
+      }
+      else // recursion step 
+      {
+         return number * Factorial(number - 1);
+      }
+   }
+}
+
+static void Main(string[] args)
+{
+	TimeSpan zaman = new TimeSpan(11, 52, 21);
+	Console.WriteLine("Saat=" + zaman.ToString());
+	TimeSpan EklenecekSaat = TimeSpan.FromHours(3);
+	Console.WriteLine("Bu saatin 3 saat sonrası = " +
+			zaman.Add(EklenecekSaat));
+	Console.ReadKey();
+}
+
+static void Main(string[] args)
+{
+	DateTime tarih = new DateTime(2014, 06, 15);
+	TimeSpan fark = DateTime.Now.Subtract(tarih);
+
+	Console.WriteLine("Bugün = " +
+		DateTime.Now.ToLongDateString());
+	Console.WriteLine("Bugünün tarihi ile " +
+		tarih.ToLongDateString() + 
+		" arasındaki fark = " + fark.Days +" gün");
+	Console.ReadKey();
+}
+
+static void Main(string[] args)
+{
+	TimeSpan zaman = new TimeSpan(11, 52, 21);
+	Console.WriteLine("Saat=" + zaman.ToString());
+	Console.ReadKey();
+}
+
+static void Main(string[] args)
+{
+	//BigInteger sayı=3;
+	//Console.WriteLine(BigInteger.ModPow(sayı,2,2 ));
+	BigInteger bolunen=100;
+	BigInteger bolen=3;            
+	BigInteger sonuc = 0,kalan=0;
+	sonuc = BigInteger.DivRem(bolunen, bolen, out kalan);
+	Console.WriteLine("Sonuç = {0}, Kalan = {1}",sonuc,kalan);
+	Console.ReadLine();
+}
+
+static void Main(string[] args)
+{
+	BigInteger sayı;
+	sayı = BigInteger.Parse("1267650600228229401496703205376");
+	Console.WriteLine("Sayı 2'nin katı mı? = " + sayı.IsPowerOfTwo);
+	Console.ReadLine();
+}
+
+static void Main(string[] args)
+{
+	int i;
+	string yazi = "";
+	DateTime baslangiczamani;
+	DateTime bitiszamani;
+	baslangiczamani = DateTime.Now;
+	for (i = 0; i <= 100000; i++)
+		yazi = yazi + i.ToString();
+	bitiszamani = DateTime.Now;
+	Console.WriteLine("String Sınıfı Başlangıç Zamanı= " +
+						baslangiczamani.ToString());
+	Console.WriteLine("String Sınıfı Bitiş Zamanı= " +
+						bitiszamani.ToString());
+	Console.WriteLine();
+
+	StringBuilder sb = new StringBuilder();
+	baslangiczamani = DateTime.Now;
+	for (i = 0; i <= 100000; i++)
+		sb.Append(i.ToString());
+	bitiszamani = DateTime.Now;
+	Console.WriteLine("StringBuilder Sınıfı Başlangıç Zamanı= " +
+						baslangiczamani.ToString());
+	Console.WriteLine("StringBuilder Sınıfı Bitiş Zamanı= " +
+						bitiszamani.ToString());
+	Console.ReadKey();
+}
+
+static void Main(string[] args)
+{
+	//Console.Write("Deneme".PadRight(10));
+	//Console.WriteLine("Deneme".PadLeft(20, '-'));
+	Console.Write("Adınız".PadRight(15, '.'));
+	Console.WriteLine("Volkan");
+
+	Console.Write("Soyadınız".PadRight(15, '.'));
+	Console.WriteLine("Aktaş");
+	Console.ReadLine();
+}
+
+static void Main(string[] args)
+{
+	int[] toplam = new int[10000000];
+	Random rnd = new Random();
+	int rnd_sayi = 0;
+	Stopwatch sw = new Stopwatch();
+	sw.Start();
+	for (int i = 0; i < 10000000; i++)
+	{
+		rnd_sayi=rnd.Next(1,100);
+		if (rnd_sayi < 50)
+			toplam[i] = rnd_sayi;
+	}            
+	sw.Stop();            
+	Console.WriteLine("Toplam süre: {0}",sw.Elapsed);
+	Console.ReadLine();
+}
+
+class Program
+{
+	static void Main(string[] args)
+	{            
+		Timer tmr = new Timer();
+		tmr.Elapsed += tmr_Elapsed;
+		tmr.Interval = 1000;
+		tmr.Start();
+		Console.ReadLine();
+	}
+	static void tmr_Elapsed(object sender, ElapsedEventArgs e)
+	{
+		Console.Clear();
+		Console.Write(string.Format("{0:hh:mm:ss}", DateTime.Now));
+	}
+}
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		TimerCallback tmrCb = new TimerCallback(Saat);
+		Timer tmr = new Timer(tmrCb, null, 0, 1000);                      
+		Console.ReadLine();
+		tmr.Dispose();
+	}
+	private static void Saat(Object state)
+	{
+		Console.Clear();
+		Console.Write(string.Format("{0:hh:mm:ss}", DateTime.Now));           
+	} 
+}
+
+Console.WriteLine("Bir Tuşa Basınız");
+Console.TreatControlCAsInput = true;
+System.ConsoleKeyInfo KeyInfo;
+KeyInfo = Console.ReadKey();
+
+if ((KeyInfo.Modifiers & ConsoleModifiers.Alt) != 0)
+	Console.Write("ALT+");
+if ((KeyInfo.Modifiers & ConsoleModifiers.Shift) != 0)
+	Console.Write("SHIFT+");
+if ((KeyInfo.Modifiers & ConsoleModifiers.Control) != 0)
+	Console.Write("CTRL+");
+Console.WriteLine(KeyInfo.Key.ToString() + " tuşuna bastınız");
+Console.ReadLine();
+
+Console.WriteLine("Bir Tuşa Basınız");
+System.ConsoleKeyInfo KeyInfo = Console.ReadKey(true);
+Console.WriteLine(KeyInfo.Key.ToString() + " tuşuna bastınız");
+Console.ReadLine();
+
+string ad, soyad;
+Console.Write("Adınızı Girin=");
+ad = Console.ReadLine();
+Console.Write("Soyadınızı Girin=");
+soyad = Console.ReadLine();
+Console.Clear();
+Console.WriteLine
+  ("Ekrana yazdırmak için F2, Çıkmak için ESC tuşuna basınız");
+System.ConsoleKeyInfo KeyInfo = Console.ReadKey(true);
+if (KeyInfo.Key == ConsoleKey.Escape)
+{
+	System.Environment.Exit(0);
+}
+else if (KeyInfo.Key == ConsoleKey.F2)
+{
+	Console.Write(ad + " " + soyad);
+	Console.ReadKey();
+}
+
+Console.WriteLine("Adınızı Girin");
+string ad = Console.ReadLine();
+Console.WriteLine("Soyadınızı Girin");
+string soyad = Console.ReadLine();
+Console.WriteLine("Yaşınızı Girin");
+int yas = Convert.ToInt32(Console.ReadLine());
+Console.Clear();
+Console.WriteLine("Adınız |{0,-10}| Soyadınız |{1,-4}| Yaşınız |{2,10}|", 
+	ad, soyad, yas);
+Console.ReadLine();
+
+Console.SetWindowSize(30, 15);
+Console.SetCursorPosition(Console.WindowWidth / 2, Console.WindowHeight / 2);
+
+ConsoleKeyInfo KeyInfo = default(ConsoleKeyInfo);
+string password = "";
+do
+{
+	KeyInfo = Console.ReadKey(true);
+	if (KeyInfo.Key != ConsoleKey.Backspace)
+	{
+		password += KeyInfo.KeyChar;
+		Console.Write("*");
+	}
+} while (!(KeyInfo.Key == ConsoleKey.Enter));
+Console.WriteLine();
+Console.WriteLine("Girilen Şifre : " + password);
+Console.ReadLine();
+
+char karakter;
+Console.Write("Bir tuşa basarak ardından enter'a basınız: ");
+karakter = (char)Console.Read(); 
+Console.WriteLine("Basılan tuş: " + karakter);
+Console.ReadKey();
+
+Console.WriteLine(default(int));
+Console.WriteLine(default(bool));
+
+int i;
+int j;
+for (i = 0, j = 0; (i < 10 & j < 5); i++, j++)
+{
+	Console.WriteLine("C#");
+}
+
+static void Main(string[] args)
+{
+	int i;
+	for (i = 1; i <= 10000; i++)
+	{
+		if (Console.KeyAvailable == false)
+		{
+			Console.WriteLine(i);
+		}
+		else
+		{
+			break;
+		}
+		if (i == 10000) i = 1;
+	}
+}
+
+static void Main(string[] args)
+{
+	int sutun=1; 
+	int satir=0;
+	for (int i=1; i<=10;i++)
+	{
+		for (int j=1;j<=10;j++)
+		{
+		   Console.SetCursorPosition(sutun,satir+j);
+			Console.Write(i +"x" + j +'=' + (i*j));
+		}
+		sutun=sutun+14;   
+		if (i==5)
+		{
+			sutun=1;
+			satir=13;
+		}
+	}            
+	Console.ReadLine();
+}
+
+Console.SetCursorPosition(21 + i, i + 12);
+
+Array okulturleri = Array.CreateInstance(typeof(string), 3);
+okulturleri.SetValue("Endüstri Meslek", 0);
+okulturleri.SetValue("Teknik", 1);
+okulturleri.SetValue("Anadolu Teknik", 2);
+Console.Write(okulturleri.GetValue(2));
+Console.ReadKey();
+
+ArrayList isimler = new ArrayList();
+isimler.Add("Hasan");
+isimler.Add("Murat");
+isimler.Add("Talha");
+isimler.Add("Onur");
+Console.Write(isimler[2]);
+Console.ReadKey();
+
+ArrayList bilgi = new ArrayList();
+bilgi.Add("Talha");
+bilgi.Add(123);
+bilgi.Add("a");
+Console.Write(bilgi[1]);
+Console.ReadKey();
+
+ArrayList diller = new ArrayList();
+diller.Add("VB.Net");
+diller.Add("C#");
+diller.Add("ASP.Net");
+ArrayList digerdiller = new ArrayList();
+digerdiller.Add("Python");
+digerdiller.Add("F#");
+digerdiller.Add("C++");
+diller.AddRange(digerdiller);
+foreach (string eleman in diller)
+	Console.WriteLine(eleman);
+Console.ReadKey();
+
+ArrayList rakamlar = new ArrayList();
+rakamlar.Add(1);
+rakamlar.Add(2);
+rakamlar.Add(3);
+rakamlar.Add(4);
+rakamlar.Add(5);
+Console.WriteLine("Eleman Sayısı= " + rakamlar.Count);
+Console.WriteLine("Kapasite= " + rakamlar.Capacity);
+rakamlar.Remove(5);
+rakamlar.Remove(4);
+Console.WriteLine("Yeni Eleman Sayısı= " + rakamlar.Count);
+Console.WriteLine("Yeni Kapasite= " + rakamlar.Capacity);
+Console.ReadKey();
+
+ArrayList diller = new ArrayList();
+diller.Add("VB.Net");
+diller.Add("C#");
+diller.Add("ASP.Net");
+// ArrayList digerdiller = diller;
+ArrayList digerdiller = new ArrayList();
+digerdiller = (ArrayList)diller.Clone();
+diller.Remove("ASP.Net");
+Console.WriteLine(digerdiller[0]);
+Console.WriteLine(digerdiller[1]);
+Console.WriteLine(digerdiller[2]);
+Console.ReadKey();
+
+ArrayList rakamlar = new ArrayList();
+rakamlar.Add(8);
+rakamlar.Add(5);
+rakamlar.Add(3);
+rakamlar.Add(9);
+rakamlar.Add(7);
+rakamlar.Sort();
+for (int i = 0; i <= rakamlar.Count - 1; i++)
+{
+	Console.WriteLine(rakamlar[i]);
+}
+Console.ReadKey();
+
+ArrayList isimler = new ArrayList();
+isimler.Add("Hasan");
+isimler.Add("Murat");
+isimler.Add("Talha");
+isimler.Add("Onur");
+isimler.Insert(0, "Sümeyye");
+Console.WriteLine(isimler[0]);
+Console.WriteLine(isimler[1]);
+Console.ReadKey();
+
+static void Main(string[] args)
+{
+	int s1 = 10, s2 = 20, s3 = 30;
+	Console.WriteLine("Çıkış sırası :{2},{1},{0}", s1,s2,s3);
+	Console.ReadKey();
+}
+
+static void Main(string[] args)
+{
+	string ad, soyad = "";
+	ConsoleKeyInfo tus;
+	Console.Write("Ad: ");
+	ad = Console.ReadLine();
+	Console.Write("Soyad: ");
+	soyad = Console.ReadLine();
+	tus = Console.ReadKey(true);
+	if(tus.Key == ConsoleKey.F2)
+	{
+		Console.WriteLine("Girilen Ad: " + ad);
+		Console.WriteLine("Girilen Soyad: " + soyad);
+		Console.ReadKey();
+	}
+}
+
+static void Main(string[] args)
+{
+	ConsoleKeyInfo KeyInfo = default(ConsoleKeyInfo);
+	string password = "";
+	do
+	{
+		KeyInfo = Console.ReadKey(true);
+
+		if (KeyInfo.Key != ConsoleKey.Backspace)
+		{
+			password += KeyInfo.KeyChar;
+			Console.Write("*");
+		}
+	} while (!(KeyInfo.Key == ConsoleKey.Enter));
+	Console.WriteLine();
+	Console.WriteLine("Girilen Şifre :" + password);
+	Console.ReadLine();
+}
+
+static void Main(string[] args)
+{
+	Console.SetWindowSize(10, 7);
+	Console.SetCursorPosition(Console.WindowWidth / 2, Console.WindowHeight /2);
+	Console.WriteLine("C Sharp");
+	Console.ReadKey();
+}
+
+class ornekRef
+{
+   public int topla(out int a, out int b)
+	{
+
+	   a = 50;
+	   b = 100;
+		return a + b;
+	}
+
+}
+class Program
+{
+	static void Main(string[] args)
+	{
+		ornekRef ornek = new ornekRef();
+		int d = 5, f = 7;
+		Console.WriteLine(ornek.topla(out d, out f));
+		Console.ReadKey();
+
+	}
+}
+
+class ornekRef
+{
+	public int topla(ref int a,ref int b)
+	{
+	   
+		return a + b;
+	}
+	
+}
+class Program
+{
+	static void Main(string[] args)
+	{
+		ornekRef ornek = new ornekRef();
+		int d = 5, f = 7;
+		Console.WriteLine(ornek.topla(ref d, ref f));
+		Console.ReadKey();
+ 
+	}
+}
+
+class ornekParams
+{
+	public int toplam(params int[] s)
+	{
+		if (s.Length == 0)
+			return 0;
+		int t = 0;
+		foreach(int ts in s)
+			t += ts;
+		return t;   
+		}
+	}
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		ornekParams yornek = new ornekParams();
+		Console.WriteLine(yornek.toplam());
+		Console.WriteLine(yornek.toplam(5, 7));
+		Console.WriteLine(yornek.toplam(5, 7,9));
+		Console.ReadKey();
+	}
+}
+
+class ornekParams
+{
+  public void yaz(int b,params object[] n)
+	{
+		if (n.Length == 0)
+			return;
+		if (b == 0)
+			foreach (object o in n)
+				Console.Write(o.ToString() + " ");
+		else
+			foreach (object o in n)
+				Console.WriteLine(o.ToString());
+	}
+ }
+class Program
+{
+	static void Main(string[] args)
+	{
+		ornekParams ornekp = new ornekParams();
+		ornekp.yaz(1, "deneme", 4.25f, 6.9);
+		ornekp.yaz(0, 1, 5, 9, 'c');
+		ornekp.yaz(6);
+		Console.ReadKey();
+	}
+}
+
+class bilgi
+{
+	public string isim_bilgisi { get; set; }
+	public string meslek_bilgisi { get;} = "Teknisyen";
+}
+class Program
+{
+	static void Main(string[] args)
+	{
+		bilgi bilgiler = new bilgi();
+		bilgiler.isim_bilgisi = "Enver ARSLAN";
+		Console.WriteLine(bilgiler.isim_bilgisi.ToString());
+		Console.WriteLine(bilgiler.meslek_bilgisi.ToString());
+		Console.ReadLine();
+	}
+}
+
+class Program
+{
+	public struct ogrenci
+	{
+		public string ad;
+		public string soyad;
+		public int numara;
+		public string sınıf;
+	}
+	static void Main(string[] args)
+	{
+		ogrenci[] ogrenciler = new ogrenci[3];
+		ogrenciler[0].ad = "Talha";
+		ogrenciler[0].soyad = "Aktaş";
+		ogrenciler[0].sınıf = "5-C";
+		ogrenciler[0].numara = 123;
+
+		ogrenciler[1].ad = "Sümeyye";
+		ogrenciler[1].soyad = "Aktaş";
+		ogrenciler[1].sınıf = "2-C";
+		ogrenciler[1].numara = 321;
+
+		ogrenciler[2].ad = "Azra";
+		ogrenciler[2].soyad = "Uncu";
+		ogrenciler[2].sınıf = "2-C";
+		ogrenciler[2].numara = 322;
+
+
+		//select
+		//var gelenogr = from ogr in ogrenciler select ogr;
+		//foreach (var isim in gelenogr)
+		//    Console.WriteLine(isim.ad.ToString() + " " + isim.soyad.ToString());
+
+	   //where
+		//var gelenogr = from ogr in ogrenciler where ogr.sınıf == "2-C" select ogr;
+		//foreach (var isim in gelenogr)
+			//Console.WriteLine(isim.ad.ToString() + " " + isim.soyad);
+
+		// &
+		//var gelenogr = from ogr in ogrenciler where ogr.sınıf == "5-C" & ogr.soyad == "Aktaş" select ogr;
+		//foreach (var isim in gelenogr)
+		//    Console.WriteLine(isim.ad.ToString() + " " + isim.soyad.ToString());
+
+		// |
+		//var gelenogr = from ogr in ogrenciler where ogr.numara > 100 | ogr.soyad == "Aktaş" select ogr;
+		//foreach (var isim in gelenogr)
+		//    Console.WriteLine(isim.ad.ToString() + " " + isim.soyad.ToString());
+
+	   //Distinct            
+		//var gelenogr = (from ogr in ogrenciler select ogr.sınıf).Distinct();
+		//foreach (var sınıflar in gelenogr)
+		//    Console.WriteLine(sınıflar.ToString());
+		
+		//First
+		//var gelenogr = (from ogr in ogrenciler select ogr).First();
+		//Console.WriteLine(gelenogr.ad.ToString());
+
+		//Last
+		//var gelenogr = (from ogr in ogrenciler select ogr).Last();
+		//Console.WriteLine(gelenogr.ad.ToString());
+
+		//Max
+		//var gelenogr = (from ogr in ogrenciler select ogr.numara).Max();
+		//Console.WriteLine(gelenogr.ToString());
+
+		//Min
+		//var gelenogr = (from ogr in ogrenciler select ogr.numara).Min();
+		//Console.WriteLine(gelenogr.ToString());
+
+		//Count
+		//var gelenogr = (from ogr in ogrenciler where ogr.numara > 100 select ogr.numara).Count();
+		//Console.WriteLine(gelenogr.ToString());
+
+		//Contains
+		////var gelenogr = (from ogr in ogrenciler where ogr.ad.Contains("a") select new { ogr.ad, ogr.soyad });
+		//foreach (var degerler in gelenogr)
+		//    Console.WriteLine(degerler.ad.ToString() + " " + degerler.soyad.ToString());
+
+		//orderby
+		var gelenogr = (from ogr in ogrenciler where ogr.ad.Contains("a") orderby ogr.ad select new { ogr.ad, ogr.soyad });
+		foreach (var degerler in gelenogr)
+			Console.WriteLine(degerler.ad.ToString() + " " + degerler.soyad.ToString());
+
+}
+
+MessageBox.Show("İlk görsel programımı beğendiniz mi?");
+
+class Program
+{
+enum Yon
+{
+	Kuzey, Guney, Dogu, Bati
+}
+
+enum Cinsiyet
+{
+	Erkek, Kadin
+}
+
+struct Ogrenci
+{
+	public string TCKimlikNo;
+	public string AdSoyad;
+	public int Yas;
+	public DateTime DogumTarihi;
+	public double Ortalama;
+	public Cinsiyet Cinsiyet;
+}
+
+static void Main(string[] args)
+{
+	Yon yon = Yon.Dogu;
+
+	Console.WriteLine("yon = " + yon);
+
+	Ogrenci ogr1;
+
+	ogr1.AdSoyad = "Bayram Karlıbaş";
+	ogr1.Cinsiyet = Cinsiyet.Erkek;
+	ogr1.DogumTarihi = new DateTime(1978, 10, 26);
+	ogr1.Ortalama = 3.94;
+	ogr1.TCKimlikNo = "12345678901";
+	ogr1.Yas = DateTime.Now.Year - ogr1.DogumTarihi.Year;
+
+	Console.WriteLine("ogr1 = ");
+	Console.WriteLine(ogr1.AdSoyad);
+	Console.WriteLine(ogr1.Cinsiyet);
+	Console.WriteLine(ogr1.DogumTarihi);
+	Console.WriteLine(ogr1.Ortalama);
+	Console.WriteLine(ogr1.TCKimlikNo);
+	Console.WriteLine(ogr1.Yas);
+
+	Ogrenci[] ogrenciler = new Ogrenci[100];
+
+	for (int i = 0; i < 100; i++)
+	{
+		Console.Write("{0}. ogrencinin adı soyadı: ", i + 1);
+		ogrenciler[i].AdSoyad = Console.ReadLine();
+	}
+}
+
+LinkedList<int> lst = new LinkedList<int>();
+lst.AddFirst(0);
+lst.AddFirst(1);
+lst.AddLast(2);
+lst.AddLast(3);
+lst.RemoveFirst();
+lst.AddFirst(4);
+lst.AddFirst(5);
+lst.AddLast(6);
+lst.RemoveFirst();
+lst.RemoveLast();
+lst.AddLast(7);
+lst.AddFirst(8);
+lst.AddFirst(9);
+LinkedListNode<int> node;
+Console.WriteLine("Baðlý Liste Uzunluðu  = {0}", lst.Count);
+Console.Write("Baðlý Liste Deðerleri = ");
+for (node = lst.First; node != null; node = node.Next)
+{
+if (node != lst.First) Console.Write(" , ");
+Console.Write(node.Value);
+}
+
+var aList = new ArrayList();
+aList.Add("Görsel Programlama Dersi");
+aList.Add("CSharp Programlama Dili");
+aList.Add("Hasan TEMURTAÞ");
+var sDizi = new string[3];
+sDizi[0] = "Görsel Programlama Dersi";
+sDizi[1] = "CSharp Programlama Dili";
+sDizi[2] = "Hasan TEMURTAÞ";
+aList.AddRange(sDizi);
+aList.RemoveRange(2, 3);
+foreach (string a in aList) Console.Write(a + "\n");
+Console.WriteLine();
+var sDiz = new string[aList.Count];
+aList.CopyTo(sDiz, 0);
+foreach (string a in sDiz) Console.Write(a + "\n");
+
+string fn = @"..\..\..\sample.txt";
+FileStream fs;
+fs = new FileStream(fn, FileMode.Create, FileAccess.Write);
+byte[] a = new byte[256];
+for (int i = 0; i < 256; i++) a[i] = (byte)i;
+fs.Write(a,0,256);
+fs.Close();
+
+byte[] a = null;
+string fn = @"..\..\..\sample.txt";
+FileStream fs = new FileStream(fn, FileMode.Open, FileAccess.Read);
+BinaryReader br = new BinaryReader(fs);
+long n = new FileInfo(fn).Length;
+a = br.ReadBytes((int)n);
+br.Close();
+fs.Close();
+
+byte[] dizi=BitConverter.GetBytes(a);
+
+byte[] a;
+int n = int.MaxValue;
+a = BitConverter.GetBytes(n);
+foreach (var x in a)
+	Console.WriteLine(x);
+
+string str;
+var item = DriveInfo.GetDrives();
+for (int i = 0; i < item.Length; i++)
+{
+	str = "     Sürücü : " + item[i].Name;
+	Console.WriteLine(str);
+	if (i < 2) {
+		str = "Toplam Alan : " + item[i].TotalSize + " Byte";
+		Console.WriteLine(str);
+		str = "   Boş Alan : " + item[i].TotalFreeSpace + " Byte";
+		Console.WriteLine(str);
+
+	}
+	Console.WriteLine();
+}
+
+long n = new FileInfo(fName).Length;
+
+StreamReader sr = new StreamReader(fName);
+
+StreamWriter sw = new StreamWriter(fName);
+sw.Write("Bilgisayar Mühendisliği Bölümü\r\n");
+sw.Write("Java Programlama Dersi\r\n");
+sw.Write("Hasan TEMURTAŞ\r\n");
+sw.Flush();
+sw.Close();
+
+string[] lines = File.ReadAllLines(fName);
+
+string adres=@"C:\WINDOWS";
+DirectoryInfo d=new DirectoryInfo(adres);
+Console.WriteLine("Özellikler: "+d.Attributes);
+Console.WriteLine("Oluþturulma tarihi: "+d.CreationTime);
+Console.WriteLine("Var mý? "+d.Exists);
+Console.WriteLine("Uzantý: "+d.Extension);
+Console.WriteLine("Tam adres: "+d.FullName);
+Console.WriteLine("Son eriþim zamaný: "+d.LastAccessTime);
+Console.WriteLine("Son deðiþiklik zamaný: "+d.LastWriteTime);
+Console.WriteLine("Klasör adý: "+d.Name);
+Console.WriteLine("Bir üst klasör: "+d.Parent);
+Console.WriteLine("Kök dizin: "+d.Root);
+
+string adres=@"C:\WINDOWS\deneme.txt";
+FileInfo d=new FileInfo(adres);
+Console.WriteLine("Öznitelikler: "+d.Attributes);
+Console.WriteLine("Oluþturulma tarihi: "+d.CreationTime);
+Console.WriteLine("Var mý? "+d.Exists);
+Console.WriteLine("Uzantý: "+d.Extension);
+Console.WriteLine("Tam adres: "+d.FullName);
+Console.WriteLine("Son eriþim zamaný: "+d.LastAccessTime);
+Console.WriteLine("Son deðiþiklik zamaný: "+d.LastWriteTime);
+Console.WriteLine("Boyut: "+d.Length);
+Console.WriteLine("Klasör adý: "+d.Name);
+Console.WriteLine("Bulunduðu klasör: "+d.DirectoryName);
+
+string adres=@"C:\dizin\deneme.txt";
+Console.WriteLine("Uzantý: "+Path.GetExtension(adres));
+string yeniAdres=Path.ChangeExtension(adres,"jpg");
+Console.WriteLine("Yeni uzantý: "+Path.GetExtension(yeniAdres));
+string adres2=@"C:\klasör";
+Console.WriteLine("Yeni adres: "+Path.Combine(adres,adres2));
+Console.WriteLine("Klasör: "+Path.GetDirectoryName(adres));
+Console.WriteLine("Dosya adý: "+Path.GetFileName(adres));
+Console.WriteLine("Uzantýsýz dosya adý: "+Path.GetFileNameWithoutExtension(adres));
+Console.WriteLine("Tam adres: "+Path.GetFullPath(adres));
+Console.WriteLine("Kök dizin: "+Path.GetPathRoot(adres));
+Console.WriteLine("Geçici dosya adý: "+Path.GetTempFileName());
+Console.WriteLine("Geçici dosya dizini: "+Path.GetTempPath());
+Console.WriteLine("Dosya uzantýsý var mý? "+Path.HasExtension(adres));
+Console.WriteLine("Alt dizin ayýracý: "+Path.AltDirectorySeparatorChar);
+Console.WriteLine("Dizin ayýracý: "+Path.DirectorySeparatorChar);
+Console.Write("Geçersiz dosya adý karakterleri: ");
+char[] dizi=Path.GetInvalidFileNameChars();
+foreach(char b in dizi)
+Console.Write(b+" ");
+Console.Write("\nGeçersiz adres karakterleri: ");
+char[] dizi2=Path.GetInvalidPathChars();
+foreach(char b in dizi)
+Console.Write(b+" ");
+Console.WriteLine("\nAdres ayýrýcý karakter: "+Path.PathSeparator);
+Console.WriteLine("Kök dizin ayýracý: "+Path.VolumeSeparatorChar);
+
+Console.Title = "Hasan TEMURTAÞ";
+long m = GC.GetTotalMemory(false);
+double[] a = new double[4000];
+double[] b = new double[6000];
+long n = GC.GetTotalMemory(false);
+Console.WriteLine("Bytes : {0,9}", m);
+Console.WriteLine("Bytes : {0,9}", n);
+Console.WriteLine("Bytes : {0,9}", n-m);
+Console.Write("Çýkýþ için bir tuþa basýnýz ...");
+Console.ReadKey();
+
+string[] rowColValue = line.Split( delimiters, StringSplitOptions.RemoveEmptyEntries );
+
+string[] files = Directory.GetFiles(@"c:\");
+foreach (string filename in files)
+{
+FileInfo file = new FileInfo(filename);
+Console.WriteLine(file.Extension);
+}
+
+Console.WriteLine( Path.GetRandomFileName() );
+
+FileInfo f = new FileInfo(@"C:\Test.txt");
+FileStream fs = f.Create();
+Console.WriteLine("Full name: {0}", f.FullName);
+Console.WriteLine("Full atts: {0}", f.Attributes.ToString());
+fs.Close();
+f.Delete();
+
+Console.WriteLine(Path.GetFileNameWithoutExtension("c:/abc.cs"));
+
+string s = "Main.cs";
+Console.WriteLine("Filename " + s);
+Console.WriteLine(" Created at " + File.GetCreationTime(s));
+
+string s = "Main.cs";
+Console.WriteLine("Filename " + s);
+Console.WriteLine(" Accessed at " + File.GetLastAccessTime(s));
+
+FileInfo file = new FileInfo("c:\\test.txt");
+Console.WriteLine("Checking file: " + file.Name);
+Console.WriteLine("File exists: " + file.Exists.ToString());
+if (file.Exists){
+Console.WriteLine(file.LastWriteTime.ToString());
+}	  
+
+FileInfo file = new FileInfo("c:\\test.txt");
+Console.WriteLine("Checking file: " + file.Name);
+Console.WriteLine("File exists: " + file.Exists.ToString());
+if (file.Exists){
+Console.Write("File size (bytes): ");
+Console.WriteLine(file.Length.ToString());
+}
+
+public static void DecipherAttributes(FileAttributes f)
+{
+if ((f & FileAttributes.Archive) == FileAttributes.Archive)
+Console.WriteLine("Archive");
+if ((f & FileAttributes.Compressed) == FileAttributes.Compressed)
+Console.WriteLine("Compressed");
+if ((f & FileAttributes.Device) == FileAttributes.Device)
+Console.WriteLine("Device");
+if ((f & FileAttributes.Directory) == FileAttributes.Directory)
+Console.WriteLine("Directory");
+if ((f & FileAttributes.Encrypted) == FileAttributes.Encrypted)
+Console.WriteLine("Encrypted");
+if ((f & FileAttributes.Hidden) == FileAttributes.Hidden)
+Console.WriteLine("Hidden");
+if ((f & FileAttributes.NotContentIndexed) == FileAttributes.NotContentIndexed)
+Console.WriteLine("NotContentIndexed");
+if ((f & FileAttributes.Offline) == FileAttributes.Offline)
+Console.WriteLine("Offline");
+if ((f & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+Console.WriteLine("ReadOnly");
+if ((f & FileAttributes.ReparsePoint) == FileAttributes.ReparsePoint)
+Console.WriteLine("ReparsePoint");
+if ((f & FileAttributes.SparseFile) == FileAttributes.SparseFile)
+Console.WriteLine("SparseFile");
+if ((f & FileAttributes.System) == FileAttributes.System)
+Console.WriteLine("System");
+if ((f & FileAttributes.Temporary) == FileAttributes.Temporary)
+Console.WriteLine("Temporary");
+}
+public static void Main()
+{
+FileAttributes f = File.GetAttributes("Main.css");
+Console.WriteLine("Filename " +  " has attributes:");
+DecipherAttributes(f);
+}
+
+FileStream s = new FileStream("Bar.txt", FileMode.Create);
+StreamWriter w = new StreamWriter(s);
+w.Write("Hello World");
+w.Close();
+
+s = new FileStream("Bar.txt", FileMode.Open);
+StreamReader r = new StreamReader(s);
+string t;
+while ((t = r.ReadLine()) != null)
+{
+Console.WriteLine(t);
+}
+w.Close();
+
+Stream input = new FileStream("test.cs", FileMode.Open);
+int i;
+while((i = input.ReadByte()) != -1)
+Console.Write(i + " ");
+input.Close();
+
+int i, n = 10;
+BitArray a = new BitArray(n);
+a.SetAll(true);
+a.Set(3, false);
+a.Set(5, false);
+BitArray b = new BitArray(n);
+b.Set(0, true);
+b.Set(5, true);
+b.Set(6, true);
+a.Xor(b);
+Console.WriteLine("BitArray Uzunluðu : {0}", a.Length);
+for (i = 0; i < n; i++)
+Console.WriteLine(a.Get(i));
+
+class MyClass
+{
+public MyClass()
+{
+Console.WriteLine("Yapıcı Metod Çalıştı.");
+}
+~MyClass()
+{
+Console.WriteLine("Yıkıcı Metod Çalıştı.");
+
+}
+}
+class Program {
+public static void Details() {
+MyClass nesne = new MyClass();
+}
+static void Main(string[] args) {
+Details();
+{ MyClass nesne = new MyClass(); }
+GC.Collect();
+Console.Write("Çıkış için bir tuşa basınız");
+Console.ReadKey(true);
+}
+}
+
+int a = 0xff << 3;
+double b = 100 / 7.0;
+Console.WriteLine("{0}\n{1}", a, a.GetType());
+Console.WriteLine("{0}\n{1}", b, b.GetType());
+Console.WriteLine(typeof(int));
+
+int[][] dizi = new int[3][];
+dizi[0] = new int[] { 1, 2, 3 };
+dizi[1] = new int[] { 4, 5, 6, 7 };
+dizi[2] = new int[] { 8, 9 };
+for (int i = 0; i < dizi.GetLength(0); i++)
+for (int j = 0; j < dizi[i].GetLength(0); j++)
+Console.WriteLine("dizi[{0}][{1}]={2}", i, j, dizi[i][j]);
+
+string[] dizi = { "osman", "ahmet", "yakup", "meltem", "ayşe", "rabia", "mahmut", "zafer", "ömer", "ali" };
+for (int i = 0; i < dizi.Length; i++)
+Console.WriteLine(dizi[i]);
+Array.Sort(dizi);
+Console.WriteLine();
+for (int i = 0; i < dizi.Length; i++)
+Console.WriteLine(dizi[i]);
+Console.WriteLine();
+Console.WriteLine(Array.BinarySearch(dizi, "yakup"));
+Array.Clear(dizi, 1, 3);
+for (int i = 0; i < dizi.Length; i++)
+Console.WriteLine(dizi[i]);
+Console.WriteLine();
+Array.Reverse(dizi);
+for (int i = 0; i < dizi.Length; i++)
+Console.WriteLine(dizi[i]);
+Console.WriteLine();
+
+string adres = @"D:\2019\deneme.txt";
+FileInfo d = new FileInfo(adres);
+Console.WriteLine("Öznitelikler: " + d.Attributes);
+Console.WriteLine("Oluşturulma tarihi: " + d.CreationTime);
+Console.WriteLine("Var mı? " + d.Exists);
+Console.WriteLine("Uzantı: " + d.Extension);
+Console.WriteLine("Tam adres: " + d.FullName);
+Console.WriteLine("Son erişim zamanı: " + d.LastAccessTime);
+Console.WriteLine("Son değişiklik zamanı: " + d.LastWriteTime);
+Console.WriteLine("Boyut: " + d.Length);
+Console.WriteLine("Klasör adı: " + d.Name);
+Console.WriteLine("Bulunduğu klasör: " + d.DirectoryName);
+
+File.Exists("c:\\test.txt")
+
+FileInfo MyFile = new FileInfo(@"c:\Projects\Testing.txt");
+MyFile.Create();
+MyFile.Delete();
+MyFile.CopyTo(@"c:\Folder\Testing.txt");
+MyFile.CopyTo(@"c:\Folder\Testing.txt", true);
+
+
+string[] files = Directory.GetFiles(@"c:\");
+foreach (string filename in files){
+FileInfo file = new FileInfo(filename);
+Console.WriteLine("{0} created on {1}, and is a {2} file",
+file.Name, file.CreationTime,file.Extension);
+}
+
+FileInfo file = new FileInfo("c:\\test.txt");
+Console.WriteLine("Checking file: " + file.Name);
+Console.WriteLine("File exists: " + file.Exists.ToString());
+if (file.Exists){
+Console.Write("File created: ");
+Console.WriteLine(file.CreationTime.ToString());
+Console.Write("File last updated: ");
+Console.WriteLine(file.LastWriteTime.ToString());
+Console.Write("File last accessed: ");
+Console.WriteLine(file.LastAccessTime.ToString());
+}
+
+string[] aFiles = Directory.GetFiles("c:\\");
+foreach (string s in aFiles) Console.WriteLine(s);
+
+DirectoryInfo dir = new DirectoryInfo("c:\\a");
+FileInfo[] files = dir.GetFiles("*.gif");
+foreach (FileInfo file in files){
+Console.Write("Name: " + file.Name + "  ");
+Console.WriteLine("Size: " + file.Length.ToString());
+}
+
+Console.WriteLine(Directory.Exists("c:\\"));
+
+Console.WriteLine("Using: " + Directory.GetCurrentDirectory());
+
+Console.WriteLine("The relative path 'file.txt' " 
++ Path.GetFullPath("file.txt"));
+
+Directory.SetCurrentDirectory(@"c:\");
+
+using (Stream s = new FileStream("c:\\test.txt", FileMode.Open)){
+s.Seek(8, SeekOrigin.Current);
+Console.WriteLine(s.ReadByte());
+s.Seek(0, SeekOrigin.Begin);
+Console.WriteLine(s.ReadByte());
+s.Seek(-1, SeekOrigin.End);
+Console.WriteLine(s.ReadByte());
+}
+
+using (Stream s = new FileStream("c:\\test.txt", FileMode.Open)){
+int readCount;
+byte[] buffer = new byte[4096];
+while ((readCount = s.Read(buffer, 0, buffer.Length)) != 0){
+for (int i = 0; i < readCount; i++){
+Console.Write("{0} ", buffer[i]);
+}
+}
+}
+
+static int islem(ref int a, ref int b)//referans ile çağırma
+{	a += 3;b *= 2;return a + b;}
+static void Main(string[] args)
+{	int a, b;
+a = b = 5;
+Console.WriteLine("a={0},b={1}", a, b);
+int x = islem(ref a, ref b);
+Console.WriteLine("a={0},b={1},islem={2}", a, b, x);
+int y = islem(ref a, ref b);
+Console.WriteLine("a={0},b={1},islem={2}", a, b, y);
+Console.ReadKey();
+}
+
+static int[] diziislem(int[] dizi1)
+{
+int[] dizi2 = new int[dizi1.Length];
+for (int i = 0; i < dizi2.Length; i++)
+{
+dizi2[i] = dizi1[i]+5;
+}
+return dizi2;
+}
+static void Main(string[] args)
+{
+int[] dizi1 = { 3, 5, 7, 7, 65 };
+foreach (int i in diziislem(dizi1))
+{
+Console.WriteLine(i);
+}
+Console.ReadKey();
+}
+
+static int islem(ref int a, ref int b, out int c)//referans ile çağırma
+{
+a += 3;
+b *= 2;
+c = 5;
+return a + b + c;
+}
+static void Main(string[] args)
+{
+int a, b, c;
+a = b = 5;
+Console.WriteLine("a={0},b={1}", a, b);
+int x = islem(ref a, ref b, out c);
+Console.WriteLine("a={0},b={1},islem={2}", a, b, x);
+int y = islem(ref a, ref b, out c);
+Console.WriteLine("a={0},b={1},islem={2}", a, b, y);
+Console.ReadKey();
+}
+
+static void diziyaz(int[] sayi)
+{
+foreach (int i in sayi)
+{
+Console.WriteLine(i);
+}
+}
+static void Main(string[] args)
+{
+int[] sayi = { 1,2,3,4,5,6};
+diziyaz(sayi);
+Console.ReadKey();
+}
+
+class stt
+{
+public int a = 5;
+public static int b = 10;
+public static void yaz()
+{
+Console.WriteLine("b={0}",b);
+}
+}
+static void Main(string[] args)
+{
+//a erişim
+stt s1 = new stt();
+Console.WriteLine(s1.a);
+//b erişim
+Console.WriteLine(stt.b);
+Console.ReadKey();
+}
+
+static int islem(params int[] gelen)
+{
+int T = 0;
+foreach (int i in gelen)
+{
+T += i;
+}
+return T;
+
+}
+static void Main(string[] args)
+{
+Console.WriteLine(islem(2,3));
+Console.WriteLine(islem(2,3,4));
+Console.WriteLine(islem(2,3,4,5));
+Console.ReadKey();
+}
+
+public class Ogrenci
+{
+public int ONo;
+public string OAdSoyad;
+string Adres;
+}
+class Program
+{
+static void Main(string[] args)
+{
+Ogrenci Ogr1 = new Ogrenci();
+Ogr1.ONo = 10;
+Ogr1.OAdSoyad = "Ali Mert";
+Console.WriteLine("No={0},AdSoyad={1}",Ogr1.ONo,Ogr1.OAdSoyad);
+//yeni öğrenci
+Ogrenci ogr2 = new Ogrenci();
+ogr2 = Ogr1;
+Console.WriteLine("No={0},AdSoyad={1}", ogr2.ONo,ogr2.OAdSoyad);
+Console.ReadKey();
+}
+}
+
+char c = '0'
+string s = "123456789"
+str.GetType()
+typeof(str)
+int m = 3 * 5 / 7
+int n = 3 * (5 / 7)
+float f = 5 / 2 / 4f
+bool drm = 4 < 6
+object o = "500"
+string s = o as string
+int n = 500
+object o = n as object
+int n = 10
+bool drm = n is int
+int[,] a = {{1,2},{3,4},{5,6}};
+int[][] a = new int[3][];
+a[0]=new int[3];
+a[1]=new int[4];
+a[2]=new int[2];
+int[] dizi1={1,2,3,4};
+int[] dizi2=new int[10];
+dizi1.CopyTo(dizi2,3);
+Burada dizi1'in tüm elemanları dizi2'ye 3. indeksten itibaren kopyalanıyor.
+Array.Copy(dizi1,dizi2,3);
+Burada 3 tane eleman dizi1'den dizi2'ye kopyalanır. Kopyalama işlemi 0. indeksten başlar.
+Array.Copy(dizi1,2,dizi2,7,3);
+Burada dizi1'in 2. indeksinden itibaren 3 eleman, dizi2'ye 7. indeksten itibaren kopyalanıyor.
+Array.Clear(dizi,1,3);
+Bu kod dizi dizisinin 1. indeksinden itibaren 3 indeksini sıfırlar (varsayılan değere döndürür).
+Array.Reverse(dizi);
+Bu kod dizi dizisinin tamamını ters çevirir.
+Array.Reverse(dizi,1,3);
+Bu kod dizi dizisinin 1. indeksten itibaren 3 elemanını ters çevirir.
+
+class marka
+{
+public string isim;
+public int sektor;
+}
+class kategori
+{
+public int no;
+public string isim;
+public string aciklama;
+}
+class urun
+{
+public string isim;
+public marka marka_nesne;
+public kategori kategori_nesne;
+}
+marka ap1 = new marka();
+ap1.isim = "Apple";
+ap1.sektor = 0;
+marka tos1 = new marka();
+tos1.isim = "Thoshiba";
+tos1.sektor = 0;
+kategori bil = new kategori();
+bil.isim = "Bilgisiyar";
+bil.no = 1;
+bil.aciklama = "Yeni bilgisayar kategorisi";
+urun u = new urun();
+u.isim = "Laptop";
+u.marka_nesne = tos1;
+u.kategori_nesne = bil;
+urun u1 = new urun();
+u1.isim = "Tablet";
+u1.marka_nesne = ap1;
+u1.kategori_nesne = bil;
+
+private bool AsalMi(int sayi)
+{
+if (sayi < 2)
+return false;
+if (sayi == 2)
+return true;
+for (int bolen = 2; bolen < sayi; bolen++)
+{
+if (sayi % bolen == 0)
+return false;
+}
+return true;
+}
+
+string firstName = "John ";
+string lastName = "Doe";
+string name1 = firstName + lastName;
+string name2 = string.Concat(firstName, lastName);
+
+string firstName = "John";
+string lastName = "Doe";
+string name = $"My full name is: {firstName} {lastName}";
+Console.WriteLine(name);
+
+string myString = "Hello";
+Console.WriteLine(myString[0]);  // Outputs "H"
+Console.WriteLine(myString[1]);  // Outputs "e"
+Console.WriteLine(myString.IndexOf("e"));  // Outputs "1"
+
+
+string name = "John Doe";
+int charPos = name.IndexOf("D");
+string lastName = name.Substring(charPos);
+Console.WriteLine(lastName);
+
+int time = 20;
+string result = (time < 18) ? "Good day." : "Good evening.";
+Console.WriteLine(result);
+
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Array.Sort(cars);
+foreach (string i in cars)
+{
+  Console.WriteLine(i);
+}
+
+int[] myNumbers = {5, 1, 8, 9};
+Array.Sort(myNumbers);
+foreach (int i in myNumbers)
+{
+  Console.WriteLine(i);
+}
+
+using System.Linq;
+int[] myNumbers = {5, 1, 8, 9};
+Console.WriteLine(myNumbers.Max());  // returns the largest value
+Console.WriteLine(myNumbers.Min());  // returns the smallest value
+Console.WriteLine(myNumbers.Sum());  // returns the sum of elements
+
+// Create an array of four elements, and add values later
+string[] cars = new string[4];
+// Create an array of four elements and add values right away 
+string[] cars = new string[4] {"Volvo", "BMW", "Ford", "Mazda"};
+// Create an array of four elements without specifying the size 
+string[] cars = new string[] {"Volvo", "BMW", "Ford", "Mazda"};
+// Create an array of four elements, omitting the new keyword,
+// and without specifying the size
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+static int PlusMethod(int x, int y)
+{
+  return x + y;
+}
+static double PlusMethod(double x, double y)
+{
+  return x + y;
+}
+static void Main(string[] args)
+{
+  int myNum1 = PlusMethod(8, 5);
+  double myNum2 = PlusMethod(4.3, 6.26);
+  Console.WriteLine("Int: " + myNum1);
+  Console.WriteLine("Double: " + myNum2);
+}
+
+class Car 
+{
+  string model;
+  string color;
+  int year;
+  static void Main(string[] args)
+  {
+    Car Ford = new Car();
+    Ford.model = "Mustang";
+    Ford.color = "red";
+    Ford.year = 1969;
+    Car Opel = new Car();
+    Opel.model = "Astra";
+    Opel.color = "white";
+    Opel.year = 2005;
+    Console.WriteLine(Ford.model);
+    Console.WriteLine(Opel.model);
+  }
+}
+
+class Car
+{
+  public string model;
+  public string color;
+  public int year;
+  // Create a class constructor with multiple parameters
+  public Car(string modelName, string modelColor, int modelYear)
+  {
+    model = modelName;
+    color = modelColor;
+    year = modelYear;
+  }
+  static void Main(string[] args)
+  {
+    Car Ford = new Car("Mustang", "Red", 1969);
+    Console.WriteLine(Ford.color + " " + Ford.year + " " + Ford.model);
+  }
+}
+
+class Person
+{
+  private string name; // field
+  public string Name   // property
+  {
+    get { return name; }
+    set { name = value; }
+  }
+}
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person myObj = new Person();
+    myObj.Name = "Liam";
+    Console.WriteLine(myObj.Name);
+  }
+}
+
+class Person
+{
+  public string Name  // property
+  { get; set; }
+}
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person myObj = new Person();
+    myObj.Name = "Liam";
+    Console.WriteLine(myObj.Name);
+  }
+}
+
+// Virtual
+class Animal  // Base class (parent) 
+{
+  public virtual void animalSound() 
+  {
+    Console.WriteLine("The animal makes a sound");
+  }
+}
+class Pig : Animal  // Derived class (child) 
+{
+  public override void animalSound() 
+  {
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+class Dog : Animal  // Derived class (child) 
+{
+  public override void animalSound() 
+  {
+    Console.WriteLine("The dog says: bow wow");
+  }
+}
+class Program 
+{
+  static void Main(string[] args) 
+  {
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig = new Pig();  // Create a Pig object
+    Animal myDog = new Dog();  // Create a Dog object
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}
+
+// Abstract class
+abstract class Animal
+{
+  // Abstract method (does not have a body)
+  public abstract void animalSound();
+  // Regular method
+  public void sleep()
+  {
+    Console.WriteLine("Zzz");
+  }
+}
+// Derived class (inherit from Animal)
+class Pig : Animal
+{
+  public override void animalSound()
+  {
+    // The body of animalSound() is provided here
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+class Program
+{
+  static void Main(string[] args)
+  {
+    Pig myPig = new Pig(); // Create a Pig object
+    myPig.animalSound();  // Call the abstract method
+    myPig.sleep();  // Call the regular method
+  }
+}
+
+using System.IO;  // include the System.IO namespace
+string writeText = "Hello World!";  // Create a text string
+File.WriteAllText("filename.txt", writeText);  // Create a file and write the content of writeText to it
+string readText = File.ReadAllText("filename.txt");  // Read the contents of the file
+Console.WriteLine(readText);  // Output the content
+
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);
+}
+catch (Exception e)
+{
+  Console.WriteLine(e.Message);
+}
+
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);
+}
+catch (Exception e)
+{
+  Console.WriteLine("Something went wrong.");
+}
+
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);
+}
+catch (Exception e)
+{
+  Console.WriteLine("Something went wrong.");
+}
+finally
+{
+  Console.WriteLine("The 'try catch' is finished.");
+}

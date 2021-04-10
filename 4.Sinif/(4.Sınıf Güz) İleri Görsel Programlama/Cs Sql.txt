@@ -1,0 +1,93 @@
+private void btnKayitEkle_Click(object sender, EventArgs e)
+{
+  string BaglantiAdresi =
+              "Server=.;Database=Hokumus;User Id=sa;Password=123456;";
+  SqlConnection con = new SqlConnection(BaglantiAdresi);
+  SqlCommand cmd = new SqlCommand();
+  cmd.Connection = con;
+  cmd.CommandText = "INSERT INTO Kisiler (Adi, Soyadi) VALUES ('Ali', 'Can')";
+  con.Open();
+  cmd.ExecuteNonQuery();
+  con.Close();
+}
+
+
+private void btnScalar_Click(object sender, EventArgs e)
+{
+  string BaglantiAdresi =
+            "Server=.;Database=Hokumus;User Id=sa;Password=123456;";
+  SqlConnection con = new SqlConnection(BaglantiAdresi);
+  SqlCommand cmd = new SqlCommand();
+  cmd.Connection = con;
+  cmd.CommandText = "SELECT Adi FROM Kisiler";
+  con.Open();
+  object Adi = cmd.ExecuteScalar();
+  con.Close();
+}
+
+
+private void btnReader_Click(object sender, EventArgs e)
+{
+  string BaglantiAdresi =
+            "Server=.;Database=Hokumus;User Id=sa;Password=123456;";
+  SqlConnection con = new SqlConnection(BaglantiAdresi);
+  SqlCommand cmd = new SqlCommand();
+  cmd.Connection = con;
+  cmd.CommandText = "SELECT Adi FROM Kisiler";
+  con.Open();
+  SqlDataReader dr = cmd.ExecuteReader();
+  ArrayList Isimler = new ArrayList();
+  while (dr.Read())
+  {
+    Isimler.Add(dr["Adi"]);
+  }
+  dr.Close();
+  con.Close();
+}
+
+private void Form1_Load(object sender, EventArgs e)
+{
+  con = new SqlConnection();
+  con.ConnectionString =
+    ConfigurationManager.ConnectionStrings
+         ["connSpionshopString"].ConnectionString;
+}
+
+
+private void button2_Click(object sender, EventArgs e)
+{
+  string sqlCmd = "SELECT naam,voornaam,klant_id FROM klant;";
+  SqlCommand cmd = new SqlCommand(sqlCmd, con);
+  con.Open();
+  using(SqlDataReader reader = cmd.ExecuteReader())
+  {
+    while (reader.Read())
+    {
+      listBox2.Items.Add(reader.GetString(0) + " " +
+                         reader.GetString(1) + "  (" +
+                         reader.GetInt16(2) + ")");
+    }
+  }
+  con.Close();
+}
+
+
+private void button4_Click(object sender, EventArgs e)
+{
+  int klantId = Convert.ToInt32(textBox1.Text);
+  string klantNaam = textBox2.Text;
+  string klantVoornaam = textBox3.Text;
+  con.Open();
+  SqlCommand cmd = new SqlCommand();
+  cmd.Connection = con;
+  cmd.CommandText =
+     "INSERT INTO klant(klant_id, naam, voornaam)
+                         VALUES(@param1,@param2,@param3)";
+  cmd.Parameters.AddWithValue("@param1", klantId);
+  cmd.Parameters.AddWithValue("@param2", klantNaam);
+  cmd.Parameters.AddWithValue("@param3", klantVoornaam);
+  cmd.ExecuteNonQuery();
+  con.Close();
+}
+
+

@@ -1,0 +1,1809 @@
+private void imagePictureBox_Click( 
+object sender, System.EventArgs e )
+{
+imageNum = ( imageNum + 1 ) % 3; // imageNum from 0 to 2
+
+// create Image object from file, display on PictureBox
+imagePictureBox.Image = Image.FromFile( 
+Directory.GetCurrentDirectory() + "\\images\\image" + 
+imageNum + ".bmp" );
+}
+
+//Ekran Kayıt
+Bitmap bmp = new Bitmap(
+Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+Graphics grf = Graphics.FromImage(bmp);
+grf.CopyFromScreen(0, 0, 0, 0, new Size(bmp.Width, bmp.Height));
+pictureBox1.Image = bmp;
+
+Graphics grf = CreateGraphics();
+Pen myPen = new Pen(Color.Blue, 25);
+Rectangle myRect = new Rectangle(e.X - 50, e.Y - 50, 100, 100);
+//grf.Clear(DefaultBackColor);
+grf.Clear(Color.Green);
+grf.DrawEllipse(myPen, myRect);
+
+private void Form1_Load(object sender, EventArgs e)
+{
+	richTextBox1.Text = "CSharp Programlama\n";
+	richTextBox1.Text += "Bilgisayar Mühendisliği\n";
+	richTextBox1.Text += "Hasan TEMURTAŞ";
+	FontFamily[] ff = FontFamily.Families;
+	for (int i = 0; i < ff.Length; i++) {
+		comboBox1.Items.Add(ff[i].Name);
+		if (ff[i].Name == "Courier New") comboBox1.SelectedIndex = i;
+	}
+	int[] a = { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24 };
+	for (int i = 0; i < a.Length; i++)
+		comboBox2.Items.Add(a[i]);
+	comboBox2.SelectedIndex = 4;
+}
+private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+{
+	if (comboBox1.SelectedIndex < 0 || comboBox2.SelectedIndex < 0) return;
+	string ffName = comboBox1.Text;
+	float fSize = float.Parse(comboBox2.Text);
+	FontStyle fStyle = richTextBox1.Font.Style;
+	richTextBox1.Font = new Font(ffName, fSize, fStyle);
+}
+
+label1.Font = new Font(label1.Font, label1.Font.Style ^ FontStyle.Bold);
+label1.Font = new Font(label1.Font, label1.Font.Style ^ FontStyle.Italic);
+label1.Font = new Font(label1.Font, label1.Font.Style ^ FontStyle.Underline);
+
+for (KnownColor i = KnownColor.ActiveBorder; i <= KnownColor.YellowGreen; i++)
+	listBox1.Items.Add(i);
+BackColor = ColorTranslator.FromHtml(listBox1.Text);
+Text = listBox1.Text;
+
+ColorDialog colorDialog = new ColorDialog();
+colorDialog.FullOpen = true;
+DialogResult result = colorDialog.ShowDialog();
+if (result == DialogResult.Cancel) return;
+BackColor = colorDialog.Color;
+
+richTextBox1.Font.Style ^= FontStyle.Strikeout;
+
+DialogResult buton = openFileDialog1.ShowDialog();
+if (buton == DialogResult.OK)
+{
+	using (FileStream stream = File.Open(openFileDialog1.FileName, FileMode.Open))
+	using (Image image = Image.FromStream(stream))
+	{
+		pictureBox1.Image = Bitmap.FromStream(stream);
+		label1.Text = image.Size.ToString();
+	}
+}
+
+using SpeechLib;
+SpVoice ses = new SpVoice();
+ses.Speak(textBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+ses.Volume = 10;
+
+private void Form1_Load(object sender, EventArgs e)
+{
+	foreach (FontFamily fonts in FontFamily.Families)
+		listBox1.Items.Add(fonts.Name);
+}
+private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+{
+	Graphics formGraphics = this.CreateGraphics();
+	formGraphics.Clear(SystemColors.Control);
+	string drawString = "Hasan TEMUTAŞ";
+	SolidBrush drawBrush = new SolidBrush(Color.Black);
+	Font drawFont = new Font(listBox1.Text, 20, FontStyle.Bold | FontStyle.Italic);
+	formGraphics.DrawString(drawString, drawFont, drawBrush, 20, 30);
+	drawFont.Dispose();
+	drawBrush.Dispose();
+	formGraphics.Dispose();
+}
+
+Graphics graphics = CreateGraphics();
+graphics.FillEllipse(new SolidBrush(Color.BlueViolet), e.X, e.Y, 4, 4);
+graphics.Dispose();
+
+long n = 0;
+textBox1.ResetText();
+while (true)
+{
+	n++;
+	label1.Text = n.ToString();
+	if (textBox1.Text.ToUpper() == "SON")
+		break;
+	Application.DoEvents();
+}
+
+public static string item;
+private void btnListele_Click(object sender, EventArgs e)
+{
+	int i = 0;
+	string[] klasorler = Directory.GetDirectories(textBox1.Text);
+	if (klasorler.Length != 0)
+	{
+		foreach (string aktifklasor in klasorler)
+		{
+			i++;
+			TabPage tp = new TabPage("tp" + i);
+			tabControl1.TabPages.Add(tp);
+
+			ListBox lst = new ListBox();
+			lst.Size = new System.Drawing.Size(420, 330);
+			tabControl1.TabPages[i].Text = Path.GetFileName(aktifklasor);
+			string[] dosyalar = Directory.GetFiles(aktifklasor, "*.mp3", SearchOption.AllDirectories);
+			int boyut = klasorler.Length;                   
+			if (boyut != 0)
+			{
+				foreach (string aktifdosya in dosyalar)
+				{
+					item =(Path.GetFileName(aktifdosya));
+					lst.Items.Add(item);
+				}
+			}
+			tabControl1.TabPages[i].Controls.Add(lst);
+		}
+	}
+	tabControl1.TabPages.RemoveAt(0);
+}
+
+flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+flowLayoutPanel1.WrapContents = true;
+flowLayoutPanel1.AutoScroll = true;
+
+private void Form1_Load(object sender, EventArgs e)
+{
+	Text = "Yeni Form Uygulamamız";
+	BackColor = Color.Blue;
+	Font f = new Font("Verdana", 12);
+	for (int j = 0; j < 15; j++)
+	{
+		Controls.Add(new Button
+		{
+			Location = new Point(j * 100, 0),
+			Text = "Buton " + (j + 1),
+			Font = f,
+			BackColor = Color.Azure,
+			Width = 100,
+			Height = 100,
+
+		});
+	}
+}
+
+private void Form1_Load(object sender, EventArgs e)
+{
+	Text = "Yeni Form Uygulamamız";
+	BackColor = Color.Blue;
+	Font f = new Font("Verdana",12);
+	Button b1= new Button
+	{
+		Text = "sol üst",
+		Location = new Point(0,0),
+		BackColor = Color.Azure,
+		Width = 100,
+		Height = 100,
+	};
+	b1.Click += btnClick;
+	Button b2 = new Button
+	{
+		Text = "sol alt",
+		Location = new Point(100, 0),
+		BackColor = Color.Azure,
+		Width = 100,
+		Height = 100,
+	};
+	b2.Click += btnClick;
+	Button b3 = new Button
+	{
+		Text = "sag üst",
+		Location = new Point(0, 100),
+		BackColor = Color.Azure,
+		Width = 100,
+		Height = 100,
+	};
+	b3.Click += btnClick;
+	Button b4 = new Button
+	{
+		Text = "sag alt",
+		Location = new Point(100, 100),
+		BackColor = Color.Azure,
+		Width = 100,
+		Height = 100,
+	};
+	b4.Click += btnClick;
+	Controls.Add(b1);
+	Controls.Add(b2);
+	Controls.Add(b3);
+	Controls.Add(b4);
+}
+private void btnClick(object sender, EventArgs e)
+{
+	Button b = sender as Button;
+	MessageBox.Show(b.Text + " Yazılı butona basıldı");
+	Text = b.Text;
+}
+
+private void btnislem_Click(object sender, EventArgs e)
+{
+	string sonuc;
+
+	sonuc = string.Format("{0:hh:mm:ss}", DateTime.Now);
+	textBox1.AppendText(sonuc + "\n");
+
+	sonuc = string.Format("{0:HH:mm:ss}", DateTime.Now);
+	textBox1.AppendText(sonuc + "\n");
+
+	sonuc = string.Format("{0:dd MM yyyy}", DateTime.Now);
+	textBox1.AppendText(sonuc + "\n");
+
+	sonuc = string.Format("{0:dd MMMM yyyy}", DateTime.Now);
+	textBox1.AppendText(sonuc + "\n");
+
+	sonuc = string.Format("{0:HH:mm:ss dd MMMM yyyy}", DateTime.Now);
+	textBox1.AppendText(sonuc + "\n");
+}
+
+private void btnMesaj_Click(object sender, EventArgs e)
+{
+	DateTime zaman;
+	zaman = DateTime.Now;
+	string sonuc;
+	sonuc = string.Format("{0:d}", zaman);
+	MessageBox.Show(sonuc);
+}
+
+private void btnFark_Click(object sender, EventArgs e)
+{
+	DateTime tarih1 = Convert.ToDateTime(txtTarih1.Text);
+	DateTime tarih2 = Convert.ToDateTime(txtTarih2.Text);
+	TimeSpan ts = tarih1 - tarih2;
+	//lblSonuc.Text = ts.Days.ToString();
+	lblSonuc.Text = ts.TotalHours.ToString();
+}
+
+private void btnRenkSec_Click(object sender, EventArgs e)
+{
+	DialogResult basilan_tus;
+	basilan_tus = colorDialog1.ShowDialog();
+	if (basilan_tus == DialogResult.OK)
+		this.BackColor = colorDialog1.Color;
+}
+
+private void btnKlasorSec_Click(object sender, EventArgs e)
+{
+	DialogResult basilan_tus;
+	basilan_tus = folderBrowserDialog1.ShowDialog();
+	if (basilan_tus == DialogResult.OK)
+	{
+		DirectoryInfo dosya = new
+			DirectoryInfo(folderBrowserDialog1.SelectedPath);
+		FileInfo[] belgeler = dosya.GetFiles("*.doc");
+		foreach (FileInfo b in belgeler)
+			listBox1.Items.Add(b.Name);
+	}
+}
+
+private void btnYazıTipi_Click(object sender, EventArgs e)
+{
+	DialogResult basilan_tus;
+	basilan_tus = fontDialog1.ShowDialog();
+	if (basilan_tus == DialogResult.OK)
+		textBox1.Font = fontDialog1.Font;
+}
+
+private void btnislemyap_Click(object sender, EventArgs e)
+{
+	byte not1 = Convert.ToByte(Interaction.InputBox("1. Notu Girin",
+	  "Not Girişi", "100", 10, 10));
+	byte not2 = Convert.ToByte(Interaction.InputBox("2. Notu Girin",
+				"Not Girişi", "100", 10, 10));
+	MessageBox.Show("Ortalama= " + (not1 + not2) / 2);
+}
+
+private void btnDosyaSec_Click(object sender, EventArgs e)
+{
+   byte i;
+   openFileDialog1.Multiselect = true;
+   openFileDialog1.FileName = "dosya seç";
+   openFileDialog1.Filter = "jpeg dosyaları (*.jpeg) |*.jpg|bmp dosyaları (*.bmp)|*.bmp|gif dosyaları(*.gif)|*.gif";
+   openFileDialog1.Title = "Lütfen Bir Resim Dosyası Seçin";
+   openFileDialog1.InitialDirectory = "E:\\arka_plan";
+   openFileDialog1.ShowDialog();
+   for (i=0;i<openFileDialog1.FileNames.Length-1;i++)
+   {
+	textBox1.Text = textBox1.Text + 
+		openFileDialog1.FileNames[i].ToString() + 
+		Environment.NewLine;
+   }
+}
+
+private void btnResimSec_Click(object sender, EventArgs e)
+{
+	if (openFileDialog1.ShowDialog() == DialogResult.OK)
+		pictureBox1.Image = new Bitmap(openFileDialog1.OpenFile()); 
+}
+private void Form1_Load(object sender, EventArgs e)
+{
+	openFileDialog1.FileName = "dosya seç";
+	openFileDialog1.Filter = "jpeg dosyaları (*.jpeg)|*.jpg|bmp dosyaları (*.bmp)|*.bmp|gif dosyaları(*.gif)|*.gif";
+	openFileDialog1.Title = "Lütfen Bir Resim Dosyası Seçin";
+	openFileDialog1.InitialDirectory = "E:\\arka_plan";
+}
+
+private void btnOlustur_Click(object sender, EventArgs e)
+{
+	StringBuilder sb = new StringBuilder();
+	sb.Append("Programlama");
+	sb.Append("Dilleri");
+	sb.AppendLine();
+	sb.AppendLine("-----------------------");
+	sb.AppendLine();
+	sb.AppendLine("VB.Net");
+	sb.AppendLine("C#.Net");
+	sb.AppendLine("Visual C++.Net");
+	sb.AppendLine("F#");
+	sb.AppendLine("Iron Python");
+	textBox1.Text = sb.ToString();
+}
+
+private void btnislem_Click(object sender, EventArgs e)
+{
+	StringBuilder sb = new StringBuilder();
+	sb.AppendFormat("{0:hh:mm:ss}", DateTime.Now);
+	sb.AppendLine();
+	sb.AppendFormat("{0:HH:mm:ss}", DateTime.Now);
+	sb.AppendLine();
+	sb.AppendFormat("{0:dd MM yyyy}", DateTime.Now);
+	sb.AppendLine();
+	sb.AppendFormat("{0:dd MMMM yyyy}", DateTime.Now);
+	sb.AppendLine();
+	sb.AppendFormat("{0:HH:mm:ss dd MMMM yyyy}", DateTime.Now);
+	textBox1.AppendText(sb.ToString());
+}
+
+static void Main(string[] args)
+{
+	string yazi = "KodLab";
+	StringBuilder sb = new StringBuilder();
+	sb.Append(yazi.ToString());
+	Console.WriteLine(sb.Length.ToString());
+	sb.Clear();
+	Console.WriteLine(sb.Length.ToString());
+	Console.ReadKey();
+
+}
+
+private void btnOlustur_Click(object sender, EventArgs e)
+{
+	string yazi = "VB.Net, C#. Net, Visual C++ .Net, F#";
+	StringBuilder sb = new StringBuilder();
+	sb.Append(yazi.ToString());
+	MessageBox.Show("StringBuilder'ın Kapasitesi= " +
+					 sb.Capacity);
+	sb.EnsureCapacity(50);
+	MessageBox.Show("StringBuilder'ın Yeni Kapasitesi= " +
+					 sb.Capacity);
+	textBox1.Text = sb.ToString();           
+}
+
+StringBuilder sb = new StringBuilder();
+private void btnOlustur_Click(object sender, EventArgs e)
+{
+	sb.AppendLine("VB.Net");
+	sb.AppendLine("C#.Net");
+	sb.AppendLine("Visual C++.Net");
+	sb.AppendLine("F#");
+	sb.AppendLine("Iron Python");
+	textBox1.Text = sb.ToString();
+
+}
+private void btnEkle_Click(object sender, EventArgs e)
+{
+	sb.Insert(0, "Programlama Dilleri" + "\r\n");
+	sb.Insert(21, "-", 30);
+	sb.Insert(51, "\r\n");
+	textBox1.Text = sb.ToString();
+}
+
+private void btnOlustur_Click(object sender, EventArgs e)
+{
+	string yazi = "C Sharp .NET";
+	StringBuilder sb = new StringBuilder(yazi);
+	MessageBox.Show(sb.ToString());
+}
+
+StringBuilder sb = new StringBuilder();
+private void btnOlustur_Click(object sender, EventArgs e)
+{
+	sb.AppendLine("VB.Net");
+	sb.AppendLine("C#.Net");
+	sb.AppendLine("Visual C++.Net");
+	sb.AppendLine("F#");
+	sb.AppendLine("Iron Python");
+	textBox1.Text = sb.ToString();
+}
+private void btnSil_Click(object sender, EventArgs e)
+{
+	sb.Remove(0, 7);
+	textBox1.Text = sb.ToString();
+}
+
+private void btnDegistir_Click(object sender, EventArgs e)
+{
+	textBox1.Text= textBox1.Text.Replace(txtAranacak.Text, txtDegistirilecek.Text);
+}
+
+private void textBox1_KeyDown(object sender, KeyEventArgs e)
+{
+	if (e.KeyCode == Keys.Enter) MessageBox.Show
+		("Cümlenin Kelime Sayısı= " + textBox1.Text.Split(' ').
+		Length.ToString());
+}
+
+private void btnAktar_Click(object sender, EventArgs e)
+{
+	byte i;
+	string[] yazi;
+	yazi = textBox1.Text.Split(' ',',');
+	for (i = 0; i <= yazi.Length - 1; i++)
+		listBox1.Items.Add(yazi[i].ToString());
+}
+
+private void btnAktar_Click(object sender, EventArgs e)
+{
+	byte i;
+	string[] yazi;
+	char[] karakterler = { ' ', ',' };
+	yazi = textBox1.Text.Split(karakterler,
+		StringSplitOptions.RemoveEmptyEntries);
+	for (i = 0; i <= yazi.Length - 1; i++)
+		listBox1.Items.Add(yazi[i].ToString());
+}
+
+private void btnSubString_Click(object sender, EventArgs e)
+{
+	int pozisyon;
+	string cumle;
+	cumle = textBox1.Text;
+	pozisyon = (textBox1.Text.IndexOf(".") + 1);
+	MessageBox.Show(cumle.Substring(pozisyon,
+					   cumle.Length - pozisyon));
+}
+
+private void btnToUpper_Click(object sender, EventArgs e)
+{
+	textBox1.Text = textBox1.Text.ToUpper();
+	//textBox1.Text = textBox1.Text.ToUpperInvariant();
+}
+private void btnToLower_Click(object sender, EventArgs e)
+{
+	textBox1.Text = textBox1.Text.ToLower();
+	//textBox1.Text = textBox1.Text.ToLowerInvariant();
+}
+
+System.Drawing.Color renk;
+private void button1_MouseLeave(object sender, EventArgs e)
+{
+	button1.BackColor = renk;
+}
+private void button1_MouseMove(object sender, MouseEventArgs e)
+{
+	button1.BackColor = System.Drawing.Color.DarkGray;
+}
+private void Form1_Load(object sender, EventArgs e)
+{
+	renk = button1.BackColor;
+}
+
+private void chkKalin_CheckedChanged(object sender, EventArgs e)
+{
+	textBox1.Font = new Font(textBox1.Font.Name,
+		textBox1.Font.Size, textBox1.Font.Style ^ FontStyle.Bold);
+}
+private void chkEgik_CheckedChanged(object sender, EventArgs e)
+{
+	textBox1.Font = new Font(textBox1.Font.Name,
+		textBox1.Font.Size, textBox1.Font.Style ^ FontStyle.Italic);
+}
+private void chkAltiCizili_CheckedChanged(object sender, EventArgs e)
+{
+	textBox1.Font = new Font(textBox1.Font.Name,
+		textBox1.Font.Size, textBox1.Font.Style ^ FontStyle.Underline);
+}
+
+Form2 frm2 = new Form2();
+frm2.Show();
+frm2.BringToFront(); 
+
+MessageBox.Show("Uygulamadan Çıkamazsınız!");
+e.Cancel = true;
+
+private void Form1_KeyDown(object sender, KeyEventArgs e)
+{
+	if (e.Control && e.KeyCode == Keys.C)            
+	{
+		DialogResult cikis = MessageBox.Show
+		  ("Ctrl+C tuşlarına basıldı. Çıkmak istediğinize emin misiniz",
+		  "Çıkış", MessageBoxButtons.OKCancel);
+		if (cikis == DialogResult.OK) Application.Exit();
+	}
+
+}
+
+private void Form1_Load(object sender, EventArgs e)
+{
+	GroupBox groupBox1 = new GroupBox();
+	Label label1 = new Label();
+	label1.Location = new Point(20, 30);
+	label1.Text = "Adı Soyadı: ";
+	TextBox text1 = new TextBox();
+	text1.Text = "Volkan AKTAŞ";
+	text1.Location = new Point(150, 30);
+	Controls.Add(groupBox1);
+	groupBox1.FlatStyle = FlatStyle.Flat;
+	groupBox1.AutoSize = true;
+	groupBox1.Left = groupBox1.Padding.Left +
+					 groupBox1.Margin.Left;
+	groupBox1.Controls.Add(label1);
+	groupBox1.Controls.Add(text1);
+}
+
+Application.StartupPath
+
+//button1.ImageIndex = 2;
+//button1.Image = imageList1.Images[2];
+
+private void Form1_Load(object sender, EventArgs e)
+{
+	Label Label1 = new Label();
+	this.Controls.Add(Label1);
+	Label1.Text = "Güzel gören güzel düşünür. \r\n Güzel düşünen hayatından lezzet alır.";
+	Label1.Font = new Font("Comic Sans MS", 15, FontStyle.Italic);
+	Label1.ForeColor = Color.DarkBlue;
+	Label1.AutoSize = true;
+}
+
+int i;
+Boolean bulundu = false;
+private void btnAktar_Click(object sender, EventArgs e)
+{
+	for (i = 0; i <= 100; i++)
+		listBox1.Items.Add(i);
+}
+private void Arama_Click(object sender, EventArgs e)
+{
+	for (i = 1; i <= listBox1.Items.Count - 1; i++)
+	{
+		if (txtAranan.Text == listBox1.Items[i].ToString())
+		{
+			bulundu = true;
+			listBox1.SelectedIndex =
+				Int32.Parse(listBox1.Items[i].ToString());
+			break;
+		}
+		else bulundu = false;
+	}
+	if (bulundu == true)
+		MessageBox.Show("Bulundu");
+	else            
+		MessageBox.Show("Bulunamadı");
+}
+
+private void btnAktar_Click(object sender, EventArgs e)
+{
+	for (int i = 0; i < textBox1.Lines.Length; i++)
+	{
+		listBox1.Items.Add(textBox1.Lines[i]);
+	}
+}
+
+private void Timer1_Tick(object sender, EventArgs e)
+{
+	Label1.Text = string.Format("{0:hh:mm:ss}", DateTime.Now);
+}
+
+private void button1_Click(object sender, EventArgs e)
+{
+	string mesaj = "Ana Program tarafından oluşturulan mesaj";
+	MessageBox.Show(mesaj);
+	mesajyaz(ref mesaj);
+	MessageBox.Show(mesaj);
+}
+private void mesajyaz(ref string mesaj)
+{
+	mesaj = "Metod tarafından oluşturulan mesaj";
+}
+
+var isim = "Sümeyye AKTAŞ";
+MessageBox.Show(isim.GetType().ToString());
+
+var yas = 5;
+MessageBox.Show(yas.GetType().ToString());
+
+var ondalık_sayı = 12.4;
+MessageBox.Show(ondalık_sayı.GetType().ToString());
+
+var mantıksal_degisken = true;
+MessageBox.Show(mantıksal_degisken.GetType().ToString());
+
+var ondalık_sayı = 12.4;
+if (ondalık_sayı.GetType() == typeof(byte))
+{
+	MessageBox.Show("Değişken türü byte");
+}
+else
+{
+	MessageBox.Show("Değişken türü byte değil");
+} 
+
+int sayi = 0;
+foreach (Control nesne in this.Controls)
+{
+	Button btn = nesne as Button;
+	if (btn == null)
+	{
+		nesne.BackColor = Color.SteelBlue;
+		nesne.Text = "deneme";
+	}
+	else
+	{
+		nesne.BackColor = Color.Aquamarine;
+		sayi = sayi + 1;
+		nesne.Text = "Buton" + sayi;
+	}
+}
+
+object a = 21.5;
+if (a is int)
+Console.WriteLine("Değer int türündendir.");
+else
+Console.WriteLine("Değer int türünden değildir.");
+Console.ReadLine();
+
+[Flags()]
+enum uzmanlık
+{
+	VBNet = 1,
+	PHP = 2,
+	ASPNet = 4,
+	CSharp = 8
+}
+foreach (string uzmanlıkalanı in Enum.GetNames(typeof(uzmanlık)))
+{
+listBox1.Items.Add(uzmanlıkalanı);
+}
+foreach (int deger in Enum.GetValues(typeof(uzmanlık)))
+{
+listBox1.Items.Add(deger);
+}
+
+public enum Gunler
+{
+	Pazartesi,
+	Salı,
+	Çarşamba,
+	Perşembe,
+	Cuma,
+	Cumartesi,
+	Pazar
+}
+if (Gunler.IsDefined(typeof(Gunler), "Pazartesi"))
+{
+	MessageBox.Show("Pazartesi değeri mevcut");
+}
+else
+{
+	MessageBox.Show("Pazartesi değeri mevcut değil");
+}
+Gunler gunadi = (Gunler)i;
+gunadi.ToString();
+
+Int32 karakteradedi;
+private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+{
+	if (karakteradedi > 0)
+	{
+	if (karakteradedi % 5 == 0)
+		textBox1.AppendText(Environment.NewLine);
+	}
+	karakteradedi = karakteradedi + 1;
+}
+
+private void button1_Click(object sender, EventArgs e)
+{
+byte notu;
+notu = Convert.ToByte(Interaction.InputBox("Notunuzu girin"));
+switch (notu)
+{
+	case 0: MessageBox.Show("Kaldınız."); break;
+	case 1: goto case 0;
+	case 2: MessageBox.Show("Geçtiniz."); break;
+	case 3: goto case 2;
+	case 4: goto case 2;
+	case 5: goto case 2;
+	default:
+		{
+			MessageBox.Show("Yanlış Not Girdiniz.");
+			break;
+		}
+}
+}
+
+private void btnCiz_Click(object sender, EventArgs e)
+{
+	Pen myPen = new Pen(Color.Black, 2);
+	Graphics formGraphics = null;
+	formGraphics = this.CreateGraphics();
+	SolidBrush drawBrush = new SolidBrush(Color.Black);
+	//Brush fillBrush = Brushes.Gray;
+	HatchBrush hBrush = new HatchBrush(HatchStyle.DashedHorizontal,
+		Color.Gray, Color.GhostWhite);
+
+	formGraphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+	//formGraphics.FillRectangle(fillBrush, new Rectangle
+	//    (10, 10, 250, 80));
+	formGraphics.FillRectangle(hBrush, new Rectangle
+		(10, 10, 250, 80));
+	formGraphics.DrawRectangle(myPen, new Rectangle
+		(10, 10, 250, 80));
+
+	myPen.Dispose();
+	formGraphics.Dispose();
+}
+
+private void btnSec_Click(object sender, EventArgs e)
+{
+	DialogResult buton= openFileDialog1.ShowDialog();
+	if (buton == DialogResult.OK)
+	{
+		Image image = Image.FromFile(openFileDialog1.FileName);
+		pictureBox1.Image = image;
+	}
+}
+
+private void btnSec_Click(object sender, EventArgs e)
+{
+	DialogResult buton = openFileDialog1.ShowDialog();
+	if (buton == DialogResult.OK)
+	{
+		Image image = Image.FromFile(openFileDialog1.FileName);
+		pictureBox1.Image = image;
+		lblGenislikYukseklik.Text = "Genişlik : " + image.Width + " Yükseklik: " + image.Height;
+		lblCozunurluk.Text = "Dikey Çözünürlük: " + image.VerticalResolution + " Yatay Çözünürlük: " + image.HorizontalResolution;
+	}
+}
+
+class snf_form_kapat
+{
+	public snf_form_kapat()
+	{
+		MessageBox.Show("Sınıf Aktif");
+	}
+	~snf_form_kapat()
+	{
+		MessageBox.Show("Sınıf Pasif");
+	}
+	public void mtd_kapat(Form frm)
+	{
+		DialogResult cevap = MessageBox.Show("Çıkmak İster misiniz",
+				"Çıkış", MessageBoxButtons.YesNo);
+		if (cevap == DialogResult.Yes)
+			frm.Close();
+	}
+}
+private void btnKapat_Click(object sender, EventArgs e)
+{
+	//snf_form_kapat.mtd_kapat(this);
+	snf_form_kapat nsn_kapat = new snf_form_kapat();
+	nsn_kapat.mtd_kapat(this);
+
+}
+
+// x passed by reference and method modifies original variable's value
+void SquareRef( ref int x )
+{
+x = x * x;
+}
+
+// x passed as out parameter and method initializes and modifies original variable's value
+void SquareOut( out int x )
+{
+x = 6;
+x = x * x;
+}
+
+// x passed by value and method cannot modify original variable's value
+void Square( int x )
+{
+x = x * x;
+}
+
+private void showOutputButton_Click(
+object sender, System.EventArgs e )
+{
+int y = 5; // create new int and initialize to 5
+int z;     // declare z, but do not initialize it
+
+// display original values of y and z
+outputLabel.Text = "Original value of y: " + y + "\n";
+outputLabel.Text += "Original value of z: uninitialized\n\n";
+
+// pass y and z by reference
+SquareRef( ref y );
+SquareOut( out z );
+
+// display values of y and z after modified by methods
+// SquareRef and SquareOut
+outputLabel.Text += "Value of y after SquareRef: " + y + "\n";
+outputLabel.Text += "Value of z after SquareOut: " + z + "\n\n";
+
+// pass y and z by value
+Square( y );
+Square( z );
+
+// display unchanged values of y and z
+outputLabel.Text += "Value of y after Square: " + y + "\n";
+outputLabel.Text += "Value of z after Square: " + z + "\n";
+
+
+} // end method showOutputButton_Click
+}
+
+pictureBox1.Image = imageList1.Images[3];
+
+g.Clear(Color.Blue);
+
+int orijinal_x = 800;
+int orijinal_y = 600;
+
+private void Form1_Load(object sender, System.EventArgs e)
+{
+Rectangle çözünürlük = new Rectangle();
+çözünürlük = Screen.GetBounds(çözünürlük);
+float oran_x, oran_y;
+oran_x = (float) çözünürlük.Width / orijinal_x;
+oran_y = (float) çözünürlük.Height / orijinal_y;
+this.Left = 0;
+this.Top = 0;
+this.Scale(oran_x, oran_y);
+}
+
+image1.Save(@"C:\test.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+image1.Save(@"C:\test.gif", System.Drawing.Imaging.ImageFormat.Gif);
+image1.Save(@"C:\test.png", System.Drawing.Imaging.ImageFormat.Png);
+
+dieLabel.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\images\\die" + face +".gif" );
+
+count = ( count + 1 ) % 30;
+logoPictureBox.Image = ( Image )images[ count ];
+
+imageNum = ( imageNum + 1 ) % 3; // imageNum from 0 to 2
+
+// create Image object from file, display on PictureBox
+imagePictureBox.Image = Image.FromFile( 
+Directory.GetCurrentDirectory() + "\\images\\image" + 
+imageNum + ".bmp" );
+
+private void DrawStarsForm_Paint(
+object sender, 
+System.Windows.Forms.PaintEventArgs e )
+{
+Graphics graphicsObject = e.Graphics;
+Random random = new Random();
+SolidBrush brush = 
+new SolidBrush( Color.DarkMagenta );
+
+// x and y points of the path
+int[] xPoints = 
+{ 55, 67, 109, 73, 83, 55, 27, 37, 1, 43 };
+int[] yPoints = 
+{ 0, 36, 36, 54, 96, 72, 96, 54, 36, 36 };
+
+// create graphics path for star;
+GraphicsPath star = new GraphicsPath();
+
+// translate the origin to (150, 150)
+graphicsObject.TranslateTransform( 150, 150 );
+
+// create star from series of points
+for ( int i = 0; i <= 8; i += 2 )
+star.AddLine( xPoints[ i ], yPoints[ i ],
+xPoints[ i + 1 ], yPoints[ i + 1 ] );
+
+// close the shape
+star.CloseFigure();
+
+// rotate the origin and draw stars in random colors
+for ( int i = 1; i <= 18; i++ )
+{
+graphicsObject.RotateTransform( 20 );
+
+brush.Color = Color.FromArgb( 
+random.Next( 200, 255 ), random.Next( 255 ), 
+random.Next( 255 ), random.Next( 255 ) );
+
+graphicsObject.FillPath( brush, star );
+}
+
+} // end method DrawStarsForm_Paint
+
+Text = "Simple DataGridView";
+DataGridView grid = new DataGridView();
+grid.Parent = this;
+grid.AutoSize = true;
+grid.Dock = DockStyle.Fill;
+grid.ColumnCount = 3;
+grid.Columns[0].HeaderText = "First Name";
+grid.Columns[1].HeaderText = "Last Name";
+grid.Columns[2].HeaderText = "Email Address";
+//grid.RowCount = 5;
+
+using (FileStream fs = File.OpenRead("file.txt"))
+{
+BinaryReader reader = new BinaryReader(fs);
+
+int intVal = reader.ReadInt32();
+float floatVal = reader.ReadSingle();
+string stringVal = reader.ReadString();
+}
+using (TextReader reader = File.OpenText("test.txt"))
+{
+string text = reader.ReadLine();
+string[] bits = text.Split(' ');
+int x = int.Parse(bits[0]);
+double y = double.Parse(bits[1]);
+string z = bits[2];
+}
+
+pictureBox1.Image = ımageList1.Images[i];
+
+int orijinal_x = 800;
+int orijinal_y = 600;
+
+private void Form1_Load(object sender, System.EventArgs e)
+{
+Rectangle çözünürlük = new Rectangle();
+çözünürlük = Screen.GetBounds(çözünürlük);
+float oran_x, oran_y;
+oran_x = (float) çözünürlük.Width / orijinal_x;
+oran_y = (float) çözünürlük.Height / orijinal_y;
+this.Left = 0;
+this.Top = 0;
+this.Scale(oran_x, oran_y);
+}
+
+Graphics g;
+SolidBrush yazı_rengi = new SolidBrush(Color.Yellow);
+Font fnt = new Font("Courier New", 10, FontStyle.Bold);
+int[] sayılar = {5, 17, 230, 900, 40, 8000};
+g = this.CreateGraphics();
+g.Clear(Color.Blue);
+string StrSayı;
+int i; 
+for (i = 0 ; i<= sayılar.Length - 1 ; i++)
+{
+StrSayı = sayılar[i].ToString();
+g.DrawString(StrSayı.PadLeft(7, ' '), fnt, yazı_rengi, 10, i * 15);
+
+
+listBox1.Items.Add(textBox1.Text.PadRight(30, ' ') + " " + 
+textBox2.Text.PadRight(15, ' ') + " " + 
+textBox3.Text);	
+
+notepadLinkLabel.LinkVisited = true;
+System.Diagnostics.Process.Start( "notepad" );	
+
+
+count = ( count + 1 ) % 30;
+logoPictureBox.Image = ( Image )images[ count ];
+
+Directory.GetCurrentDirectory()
+
+int karakteradedi = 0;
+private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+{
+if (karakteradedi>=10)
+{
+if (karakteradedi % (10) == 0)
+textBox1.AppendText(Environment.NewLine);
+}
+karakteradedi = karakteradedi + 1;
+}
+
+// Load the image.
+System.Drawing.Image image1 = System.Drawing.Image.FromFile(@"C:\test.bmp");
+// Save the image in JPEG format.
+image1.Save(@"C:\test.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+// Save the image in GIF format.
+image1.Save(@"C:\test.gif", System.Drawing.Imaging.ImageFormat.Gif);
+// Save the image in PNG format.
+image1.Save(@"C:\test.png", System.Drawing.Imaging.ImageFormat.Png);        
+
+MessageBox.Show("Şifre doğru");
+Aile_Yardımı.ToString("###,###")
+textBox1.Text = DateTime.Now.ToShortDateString();
+textBox2.Text = DateTime.Now.ToLongTimeString();
+
+private void timer2_Tick(object sender, System.EventArgs e)
+{
+//Yazı ve zemin rengini değiştirerek 
+//Yanıp sönmesini sağla
+Color c;
+c=textBox3.BackColor;
+textBox3.BackColor=textBox3.ForeColor ;
+textBox3.ForeColor=c;
+}
+
+Pen kalem = new Pen(Color.Blue, 2);
+e.Graphics.DrawLine(kalem, 10, 50, 90, 50);//1
+e.Graphics.DrawLine(kalem, 90, 50, 130, 20);//2
+e.Graphics.DrawLine(kalem, 130, 20, 170, 20);//3
+e.Graphics.DrawLine(kalem, 170, 20, 210, 50);//4
+e.Graphics.DrawLine(kalem, 210, 50, 300, 50);//5
+e.Graphics.DrawLine(kalem, 300, 50, 300, 90);//6
+e.Graphics.DrawLine(kalem, 300, 90, 10, 90);//7
+e.Graphics.DrawLine(kalem, 10, 90, 10, 50);//8
+e.Graphics.DrawEllipse(kalem, 220, 70, 40, 40);//9
+e.Graphics.DrawEllipse(kalem, 50, 70, 40, 40);//10
+
+Graphics g;
+Bitmap bmp;
+
+private void Form1_Load(object sender, System.EventArgs e)
+{
+Rectangle p = new Rectangle();
+p = Screen.GetBounds(p);
+//Ekran boyutları kadar bir bitmap oluştur
+bmp = new Bitmap(p.Width, p.Height, 
+System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+g = Graphics.FromImage(bmp);
+}
+
+private void button1_Click(object sender, System.EventArgs e)
+{
+g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+g.FillEllipse(new SolidBrush(Color.Red), 10, 10, 200, 30);
+g.DrawString("Visual C# .NET", new Font("Tahoma", 12, FontStyle.Regular), new SolidBrush(Color.Blue), 50, 15);
+this.Invalidate();
+}
+
+private void Form1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+{
+//sadece gerekli bölgeyi Bitmap nesnesinden forma kopyala
+e.Graphics.DrawImage(bmp, e.ClipRectangle, 
+e.ClipRectangle.Left, e.ClipRectangle.Top, 
+e.ClipRectangle.Width, e.ClipRectangle.Height, 
+GraphicsUnit.Pixel);
+}
+
+private void button2_Click(object sender, System.EventArgs e)
+{
+bmp.Save("c:\\temp.bmp");
+}
+
+private void button3_Click(object sender, System.EventArgs e)
+{
+bmp = (Bitmap) Image.FromFile("c:\\temp.bmp");
+this.Invalidate();
+}
+
+// get graphics object
+Graphics graphicsObject = e.Graphics;
+Rectangle rectangle1 = 
+new Rectangle( 15, 35, 80, 80 );
+SolidBrush brush1 = 
+new SolidBrush( Color.Firebrick );
+Pen pen1 = new Pen( brush1, 1 );
+SolidBrush brush2 = new SolidBrush( Color.DarkBlue );
+Pen pen2 = new Pen( brush2, 1 );
+// start at 0 and sweep 360 degrees
+graphicsObject.DrawRectangle( pen1, rectangle1 );
+graphicsObject.DrawArc( pen2, rectangle1, 0, 360 );
+// start at 0 and sweep 110 degrees
+rectangle1.Location = new Point( 100, 35 );
+graphicsObject.DrawRectangle( pen1, rectangle1 );
+graphicsObject.DrawArc( pen2, rectangle1, 0, 110 );
+// start at 0 and sweep -270 degrees
+rectangle1.Location = new Point( 185, 35 );
+graphicsObject.DrawRectangle( pen1, rectangle1 );
+graphicsObject.DrawArc( pen2, rectangle1, 0, -270 );
+// start at 0 and sweep 360 degrees
+rectangle1.Location = new Point( 15, 120 );
+rectangle1.Size = new Size( 80, 40 );
+graphicsObject.DrawRectangle( pen1, rectangle1 );
+graphicsObject.FillPie( brush2, rectangle1, 0, 360 );
+// start at 270 and sweep -90 degrees
+rectangle1.Location = new Point( 100, 120 );
+graphicsObject.DrawRectangle( pen1, rectangle1 );
+graphicsObject.FillPie( 
+brush2, rectangle1, 270, -90 );
+// start at 0 and sweep -270 degrees
+rectangle1.Location = new Point( 185, 120 );
+graphicsObject.DrawRectangle( pen1, rectangle1 );
+graphicsObject.FillPie( 
+brush2, rectangle1, 0, -270 );
+
+// get graphics object
+Graphics g = paintEvent.Graphics;
+SolidBrush brush = new SolidBrush( Color.Blue );
+Pen pen = new Pen( Color.AliceBlue );
+// create filled rectangle
+g.FillRectangle( brush, 90, 30, 150, 90 );
+// draw lines to connect rectangles
+g.DrawLine( pen, 90, 30, 110, 40 );
+g.DrawLine( pen, 90, 120, 110, 130 );
+g.DrawLine( pen, 240, 30, 260, 40 );
+g.DrawLine( pen, 240, 120, 260, 130 );
+// draw top rectangle
+g.DrawRectangle( pen, 110, 40, 150, 90 );
+// set brush to red
+brush.Color = Color.Red;
+// draw base Ellipse
+g.FillEllipse( brush, 280, 75, 100, 50 );
+// draw connecting lines
+g.DrawLine( pen, 380, 55, 380, 100 );
+g.DrawLine( pen, 280, 55, 280, 100 );
+// draw Ellipse outline
+g.DrawEllipse( pen, 280, 30, 100, 50 );
+
+// get graphics object
+Graphics g = paintEvent.Graphics;
+SolidBrush brush = new SolidBrush( Color.Blue );
+Pen pen = new Pen( Color.AliceBlue );
+// create filled rectangle
+g.FillRectangle( brush, 90, 30, 150, 90 );
+// draw lines to connect rectangles
+g.DrawLine( pen, 90, 30, 110, 40 );
+g.DrawLine( pen, 90, 120, 110, 130 );
+g.DrawLine( pen, 240, 30, 260, 40 );
+g.DrawLine( pen, 240, 120, 260, 130 );
+// draw top rectangle
+g.DrawRectangle( pen, 110, 40, 150, 90 );
+// set brush to red
+brush.Color = Color.Red;
+// draw base Ellipse
+g.FillEllipse( brush, 280, 75, 100, 50 );
+// draw connecting lines
+g.DrawLine( pen, 380, 55, 380, 100 );
+g.DrawLine( pen, 280, 55, 280, 100 );
+// draw Ellipse outline
+g.DrawEllipse( pen, 280, 30, 100, 50 );
+
+Graphics graphicsObject = e.Graphics;
+Random random = new Random();
+SolidBrush brush = new SolidBrush( Color.DarkMagenta );
+// x and y points of the path
+int[] xPoints = 
+{ 55, 67, 109, 73, 83, 55, 27, 37, 1, 43 };
+int[] yPoints = 
+{ 0, 36, 36, 54, 96, 72, 96, 54, 36, 36 };
+// create graphics path for star;
+GraphicsPath star = new GraphicsPath();
+// translate the origin to (150, 150)
+graphicsObject.TranslateTransform( 150, 150 );
+// create star from series of points
+for ( int i = 0; i <= 8; i += 2 )
+star.AddLine( xPoints[ i ], yPoints[ i ],
+xPoints[ i + 1 ], yPoints[ i + 1 ] );
+// close the shape
+star.CloseFigure();
+// rotate the origin and draw stars in random colors
+for ( int i = 1; i <= 18; i++ )
+{graphicsObject.RotateTransform( 20 );
+brush.Color = Color.FromArgb( 
+random.Next( 200, 255 ), random.Next( 255 ), 
+random.Next( 255 ), random.Next( 255 ) );
+graphicsObject.FillPath( brush, star );
+
+Graphics graphicsObject = paintEvent.Graphics;
+SolidBrush brush = new SolidBrush( Color.DarkBlue );
+// arial, 12 pt bold
+FontStyle style = FontStyle.Bold;
+Font arial = 
+new Font( new FontFamily( "Arial" ), 12, style );
+// times new roman, 12 pt regular
+style = FontStyle.Regular;
+Font timesNewRoman = 
+new Font( "Times New Roman", 12, style );
+// courier new, 16 pt bold and italic
+style = FontStyle.Bold | FontStyle.Italic;
+Font courierNew = new Font( "Courier New", 16, style );
+// tahoma, 18 pt strikeout
+style = FontStyle.Strikeout;
+Font tahoma = new Font( "Tahoma", 18, style );
+graphicsObject.DrawString( arial.Name + 
+" 12 point bold.", arial, brush, 10, 10 );
+graphicsObject.DrawString( timesNewRoman.Name + 
+" 12 point plain.", timesNewRoman, brush, 10, 30 );
+graphicsObject.DrawString( courierNew.Name + 
+" 16 point bold and italic.", courierNew, 
+brush, 10, 54 );
+graphicsObject.DrawString( tahoma.Name +
+" 18 point strikeout.", tahoma, brush, 10, 75 );
+
+Graphics graphicsObject = paintEvent.Graphics;
+SolidBrush brush = new SolidBrush( Color.DarkBlue );
+// Arial font metrics
+Font arial = new Font( "Arial", 12 );
+FontFamily family = arial.FontFamily;
+Font sanSerif = new Font( "Microsoft Sans Serif", 14, FontStyle.Italic );
+// display Arial font metrics
+graphicsObject.DrawString( "Current Font: " + 
+arial.ToString(), arial, brush, 10, 10 );
+graphicsObject.DrawString( "Ascent: " +
+family.GetCellAscent( FontStyle.Regular ), arial, brush, 10, 30 );
+graphicsObject.DrawString( "Descent: " +
+family.GetCellDescent( FontStyle.Regular ), arial, brush, 10, 50 );
+graphicsObject.DrawString( "Height: " + 
+family.GetEmHeight( FontStyle.Regular ), arial, brush, 10, 70 );
+graphicsObject.DrawString( "Leading: " +
+family.GetLineSpacing( FontStyle.Regular ), arial, brush, 10, 90 );
+// display Sans Serif font metrics
+family = sanSerif.FontFamily;
+graphicsObject.DrawString( "Current Font: " + 
+sanSerif.ToString(), sanSerif, brush, 10, 130 );
+graphicsObject.DrawString( "Ascent: " +
+family.GetCellAscent( FontStyle.Regular ), sanSerif, brush, 10, 150 );
+graphicsObject.DrawString( "Descent: " +
+family.GetCellDescent( FontStyle.Regular ), sanSerif, brush, 10, 170 );
+graphicsObject.DrawString( "Height: " + 
+family.GetEmHeight( FontStyle.Regular ), sanSerif, brush, 10, 190 );
+graphicsObject.DrawString( "Leading: " +
+family.GetLineSpacing( FontStyle.Regular ), sanSerif, brush, 10, 210 );
+
+Graphics formGraphics = CreateGraphics();
+Font drawFont = new Font("Arial", 20);
+SolidBrush drawBrush = new SolidBrush(System.Drawing.Color.Black);
+StringFormat drawFormat = new StringFormat(StringFormatFlags.LineLimit);
+Rectangle r = new Rectangle(new Point(10, 10), new Size(250, 70));
+formGraphics.DrawRectangle(Pens.Black, r);
+formGraphics.DrawString("Birinci Satır" + "\n" +
+"İkinci Satır", drawFont, drawBrush, (Rectangle)r, drawFormat);
+drawFont.Dispose();
+drawBrush.Dispose();
+formGraphics.Dispose();
+
+private void btn_Temizle_Click(object sender, EventArgs e)
+{
+	Graphics c = this.CreateGraphics();
+	SolidBrush Clear = new SolidBrush(Color.White);
+	c.FillRectangle(Clear, 30, 30, 250, 250);
+}
+private void btn_Ucgen_Click(object sender, EventArgs e)
+{
+	Graphics c = this.CreateGraphics();
+	SolidBrush graph = new SolidBrush(Color.White);
+	c.FillRectangle(graph, 30, 30, 250, 250);
+	Graphics s = this.CreateGraphics();
+	Pen thickPen = new Pen(Color.Black, 5);
+	s.DrawLine(thickPen, 50, 50, 250, 50);
+	s.DrawLine(thickPen, 50, 50, 250, 250);
+	s.DrawLine(thickPen, 250, 50, 250, 250);
+
+}
+private void btn_Dortgen_Click(object sender, EventArgs e)
+{
+	Graphics c = this.CreateGraphics();
+	SolidBrush graph = new SolidBrush(Color.White);
+	c.FillRectangle(graph, 30, 30, 250, 250);
+	Graphics s = this.CreateGraphics();
+	Pen thickPen = new Pen(Color.Black, 5);
+	s.DrawLine(thickPen, 50, 50, 50, 250);
+	s.DrawLine(thickPen, 50, 250, 250, 250);
+	s.DrawLine(thickPen, 250, 50, 250, 250);
+	s.DrawLine(thickPen, 250, 50, 50, 50);
+}
+private void btn_Besgen_Click(object sender, EventArgs e)
+{
+	Graphics c = this.CreateGraphics();
+	SolidBrush graph = new SolidBrush(Color.White);
+	c.FillRectangle(graph, 30, 30, 250, 250);
+	Graphics s = this.CreateGraphics();
+	Pen thickPen = new Pen(Color.Black, 5);
+	s.DrawLine(thickPen, 50, 50, 50, 150);
+	s.DrawLine(thickPen, 50, 150, 150, 250);
+	s.DrawLine(thickPen, 150, 250, 250, 150);
+	s.DrawLine(thickPen, 250, 50, 250, 150);
+	s.DrawLine(thickPen, 50, 50, 250, 50);
+}
+private void btn_Altıgen_Click(object sender, EventArgs e)
+{
+	Graphics c = this.CreateGraphics();
+	SolidBrush graph = new SolidBrush(Color.White);
+	c.FillRectangle(graph, 30, 30, 250, 250);
+	Graphics s = this.CreateGraphics();
+	Pen thickPen = new Pen(Color.Black, 5);
+	s.DrawLine(thickPen, 50, 50, 50, 150);
+	s.DrawLine(thickPen, 50, 150, 150, 250);
+	s.DrawLine(thickPen, 150, 250, 250, 150);
+	s.DrawLine(thickPen, 250, 50, 250, 150);
+	s.DrawLine(thickPen, 50, 50, 150, 0);
+	s.DrawLine(thickPen, 150, 0, 250, 50);
+}
+private void btn_Cikis_Click(object sender, EventArgs e)
+{
+	this.Close();
+}
+
+// draw panel mouse down event handler
+private void drawPanel_MouseDown(
+object sender, 
+System.Windows.Forms.MouseEventArgs e )
+{
+// add mouse position to vertex list
+points.Add( new Point( e.X, e.Y ) );
+drawPanel.Invalidate(); // refresh panel
+} // end method drawPanel_MouseDown
+private void drawPanel_Paint(
+object sender, 
+System.Windows.Forms.PaintEventArgs e )
+{
+// get graphics object for panel
+Graphics graphicsObject = e.Graphics;
+
+// if arraylist has 2 or more points, display shape
+if ( points.Count > 1 )
+{
+// get array for use in drawing functions
+Point[] pointArray = 
+( Point[] )points.ToArray( 
+points[ 0 ].GetType() );
+
+if ( polygonOption.Checked )
+
+// draw polygon
+graphicsObject.DrawPolygon( pen, pointArray );
+
+else if ( lineOption.Checked )
+
+// draw lines
+graphicsObject.DrawLines( pen, pointArray );
+
+else if ( filledPolygonOption.Checked )
+
+// draw filled
+graphicsObject.FillPolygon( 
+brush, pointArray );
+}
+
+} // end method drawPanel_Paint
+// handle clearButton click event
+private void clearButton_Click(
+object sender, System.EventArgs e)
+{
+points = new ArrayList(); // remove points
+
+drawPanel.Invalidate(); // refresh panel
+
+} // end method clearButton_Click
+
+// handle polygon radio button CheckedChanged event
+private void polygonOption_CheckedChanged(
+object sender, System.EventArgs e)
+{
+drawPanel.Invalidate(); // refresh panel
+
+} // end method polygonOption_CheckedChanged
+// handle line radio button CheckedChanged event
+private void lineOption_CheckedChanged(
+object sender, System.EventArgs e)
+{
+drawPanel.Invalidate(); // refresh panel
+
+} // end method lineOption_CheckedChanged
+
+// handle filled polygon radio button 
+// CheckedChanged event
+private void filledPolygonOption_CheckedChanged(
+object sender, System.EventArgs e)
+{
+drawPanel.Invalidate(); // refresh panel
+
+} // end method filledPolygonOption_CheckedChanged
+
+// handle colorButton click event
+private void colorButton_Click(
+object sender, System.EventArgs e)
+{
+// create new color dialog
+ColorDialog dialogColor = new ColorDialog();
+// show dialog and obtain result
+DialogResult result = dialogColor.ShowDialog();
+// return if user cancels
+if ( result == DialogResult.Cancel )
+return;
+pen.Color = dialogColor.Color;   // set pen to color
+brush.Color = dialogColor.Color; // set brush
+drawPanel.Invalidate();          // refresh panel
+} // end method colorButton_Click
+
+
+
+// draw various shapes on form
+private void DrawShapesForm_Paint(
+object sender, System.Windows.Forms.PaintEventArgs e )
+{
+// references to object we will use
+Graphics graphicsObject = e.Graphics;
+
+// ellipse rectangle and gradient brush
+Rectangle drawArea1 = new Rectangle( 5, 35, 30, 100 );
+LinearGradientBrush linearBrush = 
+new LinearGradientBrush( drawArea1, Color.Blue,
+Color.Yellow, LinearGradientMode.ForwardDiagonal );
+
+// pen and location for red outline rectangle
+Pen thickRedPen = new Pen( Color.Red, 10 );
+Rectangle drawArea2 = new Rectangle( 80, 30, 65, 100 );
+
+// bitmap texture
+Bitmap textureBitmap = new Bitmap( 10, 10 );
+
+// get bitmap graphics
+Graphics graphicsObject2 = 
+Graphics.FromImage( textureBitmap );
+
+// brush and pen used throughout program
+SolidBrush solidColorBrush = 
+new SolidBrush( Color.Red );
+Pen coloredPen = new Pen( solidColorBrush );
+
+// draw ellipse filled with a blue-yellow gradient
+graphicsObject.FillEllipse( 
+linearBrush, 5, 30, 65, 100 );
+
+// draw thick rectangle outline in red
+graphicsObject.DrawRectangle( 
+thickRedPen, drawArea2 );
+
+// fill textureBitmap with yellow
+solidColorBrush.Color = Color.Yellow;
+graphicsObject2.FillRectangle( 
+solidColorBrush, 0, 0, 10, 10 );
+
+// draw small black rectangle in textureBitmap
+coloredPen.Color = Color.Black;
+graphicsObject2.DrawRectangle( 
+coloredPen, 1, 1, 6, 6 );
+
+// draw small blue rectangle in textureBitmpa
+solidColorBrush.Color = Color.Blue;
+graphicsObject2.FillRectangle( 
+solidColorBrush, 1, 1, 3, 3 );
+
+// draw small red square in textureBitmap
+solidColorBrush.Color = Color.Red;
+graphicsObject2.FillRectangle( 
+solidColorBrush, 4, 4, 3, 3 );
+
+// create textured brush and 
+// display textured rectangle
+TextureBrush texturedBrush = 
+new TextureBrush( textureBitmap );
+graphicsObject.FillRectangle( 
+texturedBrush, 155, 30, 75, 100 );
+
+// draw pie-shaped arc in white
+coloredPen.Color = Color.White;
+coloredPen.Width = 6;
+graphicsObject.DrawPie( 
+coloredPen, 240, 30, 75, 100, 0, 270 );
+
+// draw lines in green and yellow
+coloredPen.Color = Color.Green;
+coloredPen.Width = 5;
+graphicsObject.DrawLine( 
+coloredPen, 395, 30, 320, 150 );
+
+// draw a rounded, dashed yellow line
+coloredPen.Color = Color.Yellow;
+coloredPen.DashCap = DashCap.Round;
+coloredPen.DashStyle = DashStyle.Dash;
+graphicsObject.DrawLine( 
+coloredPen, 320, 30, 395, 150 );
+
+} // end method DrawShapesForm_Paint
+
+// create path and draw stars along it
+private void DrawStarsForm_Paint(
+object sender, 
+System.Windows.Forms.PaintEventArgs e )
+{
+Graphics graphicsObject = e.Graphics;
+Random random = new Random();
+SolidBrush brush = 
+new SolidBrush( Color.DarkMagenta );
+// x and y points of the path
+int[] xPoints = 
+{ 55, 67, 109, 73, 83, 55, 27, 37, 1, 43 };
+int[] yPoints = 
+{ 0, 36, 36, 54, 96, 72, 96, 54, 36, 36 };
+// create graphics path for star;
+GraphicsPath star = new GraphicsPath();
+// translate the origin to (150, 150)
+graphicsObject.TranslateTransform( 150, 150 );
+// create star from series of points
+for ( int i = 0; i <= 8; i += 2 )
+star.AddLine( xPoints[ i ], yPoints[ i ],
+xPoints[ i + 1 ], yPoints[ i + 1 ] );
+// close the shape
+star.CloseFigure();
+// rotate the origin and draw stars in random colors
+for ( int i = 1; i <= 18; i++ )
+{
+graphicsObject.RotateTransform( 20 );
+brush.Color = Color.FromArgb( 
+random.Next( 200, 255 ), random.Next( 255 ), 
+random.Next( 255 ), random.Next( 255 ) );
+graphicsObject.FillPath( brush, star );
+}
+} // end method DrawStarsForm_Paint
+
+Graphics g;
+private void Form1_Resize(object sender, EventArgs e)
+{
+	g = this.CreateGraphics();
+	//form boyutlandrıldıktan sonra yeni boyutuna göre grafik nesnesi oluşturuluyor.
+}
+
+g.DrawPolygon(pen, points); // son nokta gerekmiyor
+g.DrawPie(p, 100, 100, 150, 150, 30, 45); //içi boş pasta dilimi
+
+Image img = Image.FromFile("..\\..\\bmp1.bmp");
+//Image img = Image.FromFile(@"..\..\bmp1.bmp");
+Bitmap bmp = new Bitmap(img);
+g.DrawImage(img, 0, 0, 100, 100);
+
+Graphics g;
+private void Form1_Load(object sender, EventArgs e)
+{
+	g = CreateGraphics();
+}
+private void Form1_Click(object sender, EventArgs e)
+{
+	//g.DrawRectangle(new Pen(new SolidBrush(Color.Red)), 10, 20, 100, 40);
+	Brush b = new SolidBrush(Color.Red); //color
+	Pen p = new Pen(b); //brush
+	g.DrawRectangle(p, 10, 20, 100, 40); //pen, x1,y1,genişlik,yükseklik
+	Font f = new Font("Arial", 12); //Name, size
+	string str = "Matematik";
+	SizeF txtsize = g.MeasureString(str, f);//fontun özelliğine göre metnin yükseklik ve genişliğini hesaplar.
+	Point p1 = new Point(10,0); //x,y
+	g.DrawString("Matematik", f, b, p1); //string , fonti brush, point (metnin sol-üst tarafı)
+	g.DrawString(txtsize.Width + ", " + txtsize.Height, f, b, 120, 0); //metin ölçülerini yazdırıyoruz
+	g.DrawLine(p, 10+100/2, 20+40/2, 10+100/2, 70+100/2); //ortayı anlamak için. x0= (10+110)/2 = 60 = (x1+x2)/2
+	g.DrawEllipse(p, new Rectangle(10, 70, 100, 100));
+	Rectangle r = new Rectangle(10, 200, 100, 40); // x1,y1,genişlik,yükseklik
+	//Rectengle >- left,top,right,bottom -> başka programlama dillerinde karşımıza çıkabilir
+	g.DrawRectangle(p, r);
+}
+
+Graphics g;
+Pen pen;
+Brush brush;
+public Form1()
+{
+	InitializeComponent();
+	g = CreateGraphics();
+	pen = new Pen(new SolidBrush(Color.Red));
+	brush = new SolidBrush(Color.Red);
+}
+Point old_p;
+int sayac = 0;
+private void Form1_MouseMove(object sender, MouseEventArgs e)
+{
+	//farenin bir önceki konumu yeni konumla aynı ise boyanmasına gerek yok
+	if (e.X == old_p.X && e.Y == old_p.Y)
+		return;//tedkrar boyamadan dön git
+	sayac++;
+	this.Text = sayac.ToString();
+	//iplik baskısı gibi yapmak için g.Clear 'i açıklama haline dönüştür
+	g.Clear(DefaultBackColor); //g.FillRectangle(new SolidBrush(Color.LightGray), ClientRectangle);
+	Point start = new Point(100, 100);
+	Point control1 = new Point(e.X, e.Y);//işletim sistemi event ile bize gönderiyor
+	Point end = new Point(400, 100);
+	Point control2 = new Point(e.X, e.Y);
+	// Bezieri ekrana teğeti ile birlikte çiz.
+	pen.Color = Color.Yellow;
+	g.DrawLine(pen, start, control1);
+	pen.Color = Color.Green;
+	g.DrawLine(pen, end, control2);
+	pen.Color = Color.Blue;
+	//g.DrawBezier(pen, 100, 100, 100, 0, 400, 100, 400, 0);//değerler ile oluşan bezier
+	g.DrawBezier(pen, start, control1, control2, end);//dinamik pointlardan (nokta) oluşan bezier
+	old_p = control1;//son konum hafızaya alınıyor. 
+}
+private void Form1_MouseDown(object sender, MouseEventArgs e)
+{
+	if (e.Button == MouseButtons.Right)//farenin sağ düğmesine tıklatıldı mı?
+		g.Clear(DefaultBackColor);//grafiği temizle
+	pen.Color = Color.Blue;
+	Rectangle rect = new Rectangle(e.X, e.Y, 100, 100);
+	g.DrawArc(pen, rect, 45, 180);//180 derece yay çiziziyoruz
+	pen.Color = Color.Gray;
+	g.DrawRectangle(pen, rect);
+	//rect.Inflate(100,100);  //sınavda sormayacağım
+	rect = new Rectangle(e.X + 110, e.Y, 100, 100);
+	g.DrawPie(pen, rect, 45, 270);//270 derece pasta dilimi çiziyoruz
+	//!!!!!! açılar saat yönünde pozitif olurlar
+}
+
+private void Form1_MouseDown(object sender, MouseEventArgs e)
+{
+	Graphics g = CreateGraphics();
+	Brush arkarenkfırçası = new SolidBrush(DefaultBackColor);
+	g.FillRectangle(arkarenkfırçası, ClientRectangle);
+	Font f = new Font("Arial", 12);
+	Brush b = new SolidBrush(Color.Red);
+	Point p = new Point(e.X, e.Y);
+	g.DrawString("(" + e.X.ToString() + ","+ e.Y.ToString() + ")", f, b, p);
+}
+
+Graphics g;
+Pen pen;
+Brush brush;
+public Form1()
+{
+	InitializeComponent();
+	g = CreateGraphics();
+	pen = new Pen(new SolidBrush(Color.Red));
+	brush = new SolidBrush(Color.Red);
+	//brush = Brushes.Red;//istersek böylede olabilirdi
+}
+private void Form1_MouseDown(object sender, MouseEventArgs e)
+{
+	Point point1 = new Point(e.X, e.Y); //e.X farenin x konumu, e.Y farenin Y konumu, bu nokta diğer noktalrda referans olarak alınıyor
+	Point point2 = new Point(100+e.X, 25+e.Y);//buradaki alttaki noktalar rastgele geometrik şekil edlde etmek için tercih edilmiştir
+	Point point3 = new Point(200+e.X, 5+e.Y);
+	Point point4 = new Point(250+e.X, 50+e.Y);
+	Point point5 = new Point(300+e.X, 100+e.Y);
+	Point point6 = new Point(350+e.X, 200+e.Y);
+	Point point7 = new Point(250 + e.X, 250+e.Y);
+	Point[] points =
+	{
+		point1,
+		point2,
+		point3,
+		point4,
+		point5,
+		point6,
+		point7
+	};
+	Point[] points2 = {new Point(0,0), new Point(10, 100) /*, ....*/ };//başka şekilde dizi point tanımlama
+	//istersek points2'yide kullanabilirdik
+	g.DrawPolygon(pen, points);//poligon dolgusuz
+	//g.FillPolygon(Brushes.Blue, points);//Poligon dolgu rengi
+}
+private void Form1_Resize(object sender, EventArgs e)
+{
+	g = CreateGraphics();//grafik nesnesini ClientRectangle boyutlarında yeniliyoruz.
+}
+
+Graphics graph;
+Pen pen;
+int oldX, oldY;
+public Form1()
+{
+	InitializeComponent();
+	graph = CreateGraphics();
+	pen = new Pen(Color.Blue);
+}
+private void fare_gez(object sender, MouseEventArgs e)
+{
+	if (e.Button == MouseButtons.Left)
+		graph.DrawLine(pen, oldX, oldY, e.X, e.Y);
+	else if (e.Button == MouseButtons.Middle)
+		graph.DrawLine(pen, 0, 0, e.X, e.Y);
+	else if (e.Button == MouseButtons.Right)
+		graph.Clear(DefaultBackColor);
+	oldX = e.X;
+	oldY = e.Y;
+}
+
+Graphics g;
+Random rnd;
+Point refPoint;
+public Form1()
+{
+	InitializeComponent();
+	g = CreateGraphics();
+	rnd = new Random();
+	refPoint = new Point(ClientSize.Width/2, ClientSize.Height/2);
+}
+private void Form1_MouseMove(object sender, MouseEventArgs e)
+{
+	Color color = Color.FromArgb(150, rnd.Next(256), rnd.Next(256), rnd.Next(256));
+	Pen p = new Pen(color, 2);
+	if (e.Button == MouseButtons.Left)
+	{
+		g.DrawLine(p, refPoint.X, refPoint.Y, e.X, e.Y);
+	}
+	else if (e.Button == MouseButtons.Right)
+	{
+		g.Clear(DefaultBackColor);
+	}
+}
+private void Form1_DoubleClick(object sender, EventArgs e)
+{
+	refPoint = PointToClient(Cursor.Position);//İmlecin (Cursor) ekrandaki posüzyonu forma uyarlanır
+	//"Cursor.Position" yerine "System.Windows.Forms.Control.MousePosition"  özelliğini kullanılabilir.
+}
+
+Application.DoEvents();
+
+Bitmap bmp;
+Random rnd = new Random();
+private void Form1_Load(object sender, EventArgs e)
+{
+	bmp = new Bitmap("..\\..\\img1.jpg");//Türk bayrağı görüntüsü
+	Text = bmp.PixelFormat.ToString();//bitmap görüntünün kaç byte veya bit bilgisini verir
+}
+private void Form1_Click(object sender, EventArgs e)
+{
+	Graphics g = CreateGraphics();
+	int say=0;//döngünün kaç kere döndüğünü görebilmek için
+	while (true)
+	{  
+		//set pixel kullanımı = bmp.SetPixel(x, y, renk)
+		bmp.SetPixel(rnd.Next(bmp.Width), rnd.Next(bmp.Height),
+			Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256)));//bitmap rastgale konum ce rastgele renk ile boyanıyor
+		if (say % 1000 == 0) //bin kere de bir, bmp'yi form'a çizdir
+		{
+			//Stretch resmi uzatmak anlamına gelir 
+			g.DrawImage(bmp, this.ClientRectangle, //grafiksel nesnenin ne kadarına
+				new Rectangle(0, 0, bmp.Width, bmp.Height), //imajın bir kısmı veya tamamı
+				GraphicsUnit.Pixel);
+			Text = (say/1000).ToString();//boyama döngü sayısı
+		}
+		if (say % 500000 == 0)
+			bmp = new Bitmap("..\\..\\img1.jpg");//Türk bayrağı görüntüsü
+		Application.DoEvents();//uygulama mesaj kuyruğunda mesaj varsa yerine getir.
+		//uygulama sonlandıysa kır(break) ilave edilmesi gerekir. örnceki örneklerde yaptık
+		say++;
+	}
+	//İleri Seviye!!! Doğrudan graphic nesnesinin pixellerini değiştirmek için ilave bilgi gerektirir (sınavda sorumlu değiliz)
+		//[System.Runtime.InteropServices.DllImport("gdi32.dll")]
+		//internal static extern bool SetPixel(IntPtr hdc, int X, int Y, uint crColor);
+}
+
+Graphics g;
+Font f;
+public Form1()
+{
+	InitializeComponent();
+	g = CreateGraphics();
+	f = new Font("Arial", 40, FontStyle.Italic | FontStyle.Bold);
+	//Font(adı, boyutu px, stili)
+}
+private void Form1_MouseMove(object sender, MouseEventArgs e)
+{
+	Text = e.X + "," + e.Y;//MouseEventArgs içindeki farenin x ve y konumu yazdırılıyor 
+	g.Clear(Color.LightGray);//form grafiğinin tamamı temizleniyor. Bu sebeple gözümüz kıpraşmayı hisssediyor. 
+							 //Bunun engellemek için double buffer (tampon) yöntemi kullan. Sorumlu değilsiz. 
+	g.DrawString(Text, f, Brushes.Red, e.X, e.Y);
+}
+
+splitContainer
+splitter
+
+private void DrawCurvePoint(PaintEventArgs e)
+{
+    // Create pens.
+    Pen redPen = new Pen(Color.Red, 3);
+    Pen greenPen = new Pen(Color.Green, 3);
+    // Create points that define curve.
+    Point point1 = new Point(50, 50);
+    Point point2 = new Point(100, 25);
+    Point point3 = new Point(200, 5);
+    Point point4 = new Point(250, 50);
+    Point point5 = new Point(300, 100);
+    Point point6 = new Point(350, 200);
+    Point point7 = new Point(250, 250);
+    Point[] curvePoints = {point1, point2, point3, point4, point5, point6, point7};
+    // Draw lines between original points to screen.
+    e.Graphics.DrawLines(redPen, curvePoints);
+    // Draw curve to screen.
+    e.Graphics.DrawCurve(greenPen, curvePoints);
+	// float tension = 1.0F;
+    // e.Graphics.DrawCurve(greenPen, curvePoints, tension);
+}
